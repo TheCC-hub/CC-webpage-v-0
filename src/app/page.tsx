@@ -58,7 +58,7 @@ export function HowItWorks() {
           <div className="text-black font-bold text-2xl mb-3">1</div>
           <img src="/icons/package-selection.svg" alt="Package Selection" className="h-16 mb-4" />
           <p className="text-black font-medium text-sm">
-            CHOOSE THE PACKAGE THAT'S CONTENT-TAILORED FOR YOU!
+            CHOOSE THE PACKAGE THAT&apos;S CONTENT-TAILORED FOR YOU!
           </p>
         </div>
 

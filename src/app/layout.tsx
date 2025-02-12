@@ -31,7 +31,7 @@ export default function RootLayout({
         <Navbar />
         {/* Floating Chat Button */}
         <div className="fixed bottom-5 right-5 bg-black text-white px-4 py-2 rounded-full shadow-lg cursor-pointer hover:bg-gray-800 transition">
-          Let's Chat!
+          Let&apos;s Chat!
         </div>
         {children}
       </body>

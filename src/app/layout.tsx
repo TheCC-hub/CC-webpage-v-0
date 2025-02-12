@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/header/navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +28,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Navbar />
+        {/* Floating Chat Button */}
+        <div className="fixed bottom-5 right-5 bg-black text-white px-4 py-2 rounded-full shadow-lg cursor-pointer hover:bg-gray-800 transition">
+          Let's Chat!
+        </div>
         {children}
       </body>
     </html>

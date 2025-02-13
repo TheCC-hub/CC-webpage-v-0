@@ -9,7 +9,7 @@ export default function WhatWeDo({ heading }: { heading: string }) {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
 
                 {wedo?.map((item, idx) => (
-                    <div className="flex flex-col items-center w-fit px-5" key={item.id}>
+                    <div className="flex flex-col items-center w-fit px-10" key={item.id}>
                         <div className="bg-blue-500 p-4 rounded-full mb-4">
                             {/* Replace with an actual icon */}
                             <span className="text-4xl text-white">{item.icon}</span>

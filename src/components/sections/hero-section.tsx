@@ -1,6 +1,6 @@
 export default function HeroSection() {
     return (
-        <section className="bg-black text-white px-8 md:px-16 lg:px-32 py-16 flex flex-col gap-8">
+        <section className="bg-black/20 text-text px-8 md:px-16 lg:px-32 py-16 flex flex-col gap-8">
             <h2 className="text-4xl md:text-6xl font-extrabold leading-tight">
                 Opt for <span className="text-[#0073ff]">ClipCurve</span> and reclaim <br />
                 your time for what truly <br /> matters.

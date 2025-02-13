@@ -7,11 +7,11 @@ export default function HowItWorks() {
 
             < div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto" >
                 {/* Step 1 */}
-                < div className="bg-white shadow-lg rounded-xl p-6 flex flex-col items-center border border-black" >
+                < div className="bg-white shadow-lg rounded-xl p-6 flex flex-col items-center border-4 border-black" >
                     <div className="text-black font-bold text-2xl mb-3" > 1 </div>
                     < img src="/icons/package-selection.svg" alt="Package Selection" className="h-16 mb-4" />
                     <p className="text-black font-medium text-sm" >
-                        CHOOSE THE PACKAGE THAT & apos;S CONTENT - TAILORED FOR YOU!
+                        CHOOSE THE PACKAGE THAT&apos;S CONTENT - TAILORED FOR YOU!
                     </p>
                 </div>
 

@@ -1,5 +1,6 @@
 "use client"
 import HowItWorks from "@/components/sections/how-it-works";
+import PlatformHoppers from "@/components/sections/PlatformHoppers";
 import WhatWeDo from "@/components/sections/we-do";
 import Wraper from "@/components/wraper";
 
@@ -41,7 +42,9 @@ export default function Home() {
         <WhatWeDo heading="That Isn't All!" />
       </Wraper>
 
-      <HowItWorks />
+      {/* <HowItWorks /> */}
+
+      <PlatformHoppers />
 
       Clipcurve
     </div>

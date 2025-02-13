@@ -4,12 +4,12 @@ import React from "react";
 export default function WhatWeDo({ heading }: { heading: string }) {
     return (
         <section className=" text-white py-16 px-6 text-center h-full gap-5 flex flex-col">
-            <h2 className="text-4xl font-extrabold mb-10">{heading}</h2>
+            <h2 className="text-5xl font-extrabold mb-10">{heading}</h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
 
                 {wedo?.map((item, idx) => (
-                    <div className="flex flex-col items-center w-fit px-10" key={item.id}>
+                    <div className="flex flex-col items-center w-fit px-8" key={item.id}>
                         <div className="bg-blue-500 p-4 rounded-full mb-4">
                             {/* Replace with an actual icon */}
                             <span className="text-4xl text-white">{item.icon}</span>
@@ -18,8 +18,6 @@ export default function WhatWeDo({ heading }: { heading: string }) {
                         <p className="text-white mt-2 text-[15px]">{item.body}</p>
                     </div>
                 ))}
-
-                {/* Thumbnail Design */}
 
             </div>
         </section>

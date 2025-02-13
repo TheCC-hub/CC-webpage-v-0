@@ -45,7 +45,7 @@ export default function Home() {
 
       {/* what do we do  */}
       <Wraper className="w-full min-h-screen flex flex-col items-center justify-center py-40">
-        <WhatWeDo heading="What do we do" />
+        <WhatWeDo heading="What we do!" />
         <WhatWeDo heading="That Isn't All!" />
       </Wraper>
 

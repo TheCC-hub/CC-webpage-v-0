@@ -13,9 +13,12 @@ export default {
         foreground: "var(--foreground)",
         pred: "#ed1c31",
         sred: "#f34420",
-        accent: "#f76f6f",
-        fill: "#FAF3E0",
-        text: "#333333"
+        accent: "#ff6600", /* orange */
+        fill: "#333333",
+        text: "#c0c0c0"
+        // accent: "#f76f6f",
+        // fill: "#333333",
+        // text: "#f5f5f5"
 
       },
     },

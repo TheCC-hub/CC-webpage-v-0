@@ -9,7 +9,7 @@ const StarryBackground = () => {
 
     useEffect(() => {
         const generateStar = (id: number) => {
-            const isShooting = Math.random() < 0.1; // 10% chance to be a shooting star
+            const isShooting = Math.random() < 0.2; // 10% chance to be a shooting star
             return {
                 id,
                 top: `${Math.random() * 100}vh`,
@@ -22,7 +22,7 @@ const StarryBackground = () => {
             };
         };
 
-        setStars(Array.from({ length: 100 }, (_, index) => generateStar(index)));
+        setStars(Array.from({ length: 400 }, (_, index) => generateStar(index)));
 
         const interval = setInterval(() => {
             setStars((prevStars: any[]) =>

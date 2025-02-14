@@ -7,13 +7,22 @@ import Wraper from "@/components/wraper";
 import CircleAnimation from "./test-video/page";
 import HeroSection from "@/components/sections/hero-section";
 import Testimonial from "@/components/sections/testimonial";
-
+import Image from "next/image";
+import bgImg2 from "@/assets/bg/p2.png"
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <div className="text-text relative">
-      <section className="absolute top-0 right-0 left-0 translate-x w-full -z-10">
-        <CircleAnimation />
+    <div className="text-text relative h-fit">
+      {/* animation  */}
+      <section className="absolute top-0 right-0 left-0 translate-x w-full -z-[1] min-h-full">
+        <div className="w-[200px] fixed top-40 left-24 animate-slowspin" >
+          <Image src={bgImg2} alt="" className="w-full h-full bg-cover " />
+        </div>
+
+
+
+        {/* <CircleAnimation /> */}
       </section>
 
       {/* <div className="h-screen bg-gradient-to-r from-red-200 via-orange-300 to-purple-200 text-center item-center justify-center flex"> */}

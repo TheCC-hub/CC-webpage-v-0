@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        slowspin: "spin 60s linear infinite", // Custom speed
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

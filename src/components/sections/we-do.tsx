@@ -1,10 +1,17 @@
 import { wedo } from "@/data/what-we-do";
 import React from "react";
+import Image from "next/image";
+import bgImg1 from "@/assets/bg/p1.png"
 
 export default function WhatWeDo({ heading }: { heading: string }) {
     return (
         <section className=" text-white py-16 px-6 text-center h-full gap-5 flex flex-col">
-            <h2 className="text-5xl font-extrabold mb-10">{heading}</h2>
+            <div className="relative">
+                <div className="w-[200px] -top-36 absolute right-36 rotate" >
+                    <Image src={bgImg1} alt="" className="w-full h-full bg-cover " />
+                </div>
+                <h2 className="text-5xl font-extrabold mb-10">{heading}</h2>
+            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
 

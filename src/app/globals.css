@@ -24,3 +24,20 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes move-diagonal {
+  from {
+    transform: translate(-20vw, 100vh);
+  }
+  to {
+    transform: translate(100vw, -20vh);
+  }
+}
+
+.animated-bg {
+  position: absolute;
+  width: 250px; /* Adjust size */
+  height: auto;
+  opacity: 0.4;
+  animation: move-diagonal 60s linear infinite;
+}

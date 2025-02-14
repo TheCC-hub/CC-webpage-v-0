@@ -1,33 +1,40 @@
 "use client"
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
+import { circle } from "framer-motion/client";
 
-// 🔧 Configurable Attributes
+// 🎛 CONFIGURATION (Adjustable Properties)
 const CONFIG = {
-  MAX_CIRCLES: 20, // Max number of circles
-  CIRCLE_THICKNESS: 6, // Circle border thickness
-  CIRCLE_SPACING: 16, // Space between each circle
+  MAX_CIRCLES: 10, // Max number of circles
+  CIRCLE_THICKNESS: 6, // Border thickness
+  CIRCLE_SPACING: 20, // Space between each circle
   CIRCLE_COLOR: "#39ff14", // Neon Green
-  CIRCLE_OPENING: 30, // Percentage of the circle that is open
-  ROTATION_SPEED: 6, // Rotation speed in seconds
+  CIRCLE_OPENING: 30, // % of the circle that is open
+  ROTATION_SPEED: 10, // Rotation speed in seconds
+  CIRCLE_MAX_HITS: 2, // Hits before a circle is destroyed
 
   BALL_COLOR: "#ed1c31", // Ball color (Red)
   BALL_SIZE: 30, // Ball radius (px)
-  BALL_GRAVITY: 0.3, // Gravity pulling the ball down
-  BALL_ELASTICITY: 0.98, // Bounce factor (1 = perfect, <1 loses energy)
-  INITIAL_VELOCITY: { x: 0, y: -10 }, // Initial velocity
+  BALL_GRAVITY: 0.1, // Gravity pulling the ball down
+  BALL_ELASTICITY: 1, // Perfect bounce (1 = no energy loss)
+  INITIAL_VELOCITY: { x: 0, y: -3 }, // Initial velocity
 };
 
 const CircleAnimation = () => {
-  const [circles, setCircles] = useState([{ id: 0, size: 800, speed: CONFIG.ROTATION_SPEED }]);
-  const [ball, setBall] = useState({
+  const [circles, setCircles] = useState([{ id: 0, size: 800, hits: 0 }]);
+  const [ball, setBall] = useState({ x: 0, y: -80 });
+
+  // 🔄 Ball physics state (useRef to prevent excessive re-renders)
+  const ballRef = useRef({
     x: 0,
     y: -80,
     dx: CONFIG.INITIAL_VELOCITY.x,
     dy: CONFIG.INITIAL_VELOCITY.y,
   });
 
-  // 🔄 Add new circles every 2s
+  const lastHitCircleId = useRef(null); // Prevent multiple bounces per frame
+
+  // 🔄 Add new circles every 2 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCircles((prev) => {
@@ -35,51 +42,105 @@ const CircleAnimation = () => {
         const last = prev[prev.length - 1];
         return [
           ...prev,
-          { id: prev.length, size: last.size - CONFIG.CIRCLE_SPACING, speed: Math.max(3, last.speed - 0.3) },
+          { id: prev.length, size: last.size - CONFIG.CIRCLE_SPACING, hits: 0 },
         ];
       });
-    }, 2000);
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 
-  // 🎾 Ball Physics: Gravity & Bouncing
+  // 🎾 Ball Physics with requestAnimationFrame
   useEffect(() => {
     const moveBall = () => {
-      setBall((prev) => {
-        let newX = prev.x + prev.dx;
-        let newY = prev.y + prev.dy;
-        let newDx = prev.dx;
-        let newDy = prev.dy + CONFIG.BALL_GRAVITY; // Gravity pulls the ball down
+      let { x, y, dx, dy } = ballRef.current;
+      x += dx;
+      y += dy;
+      dy += CONFIG.BALL_GRAVITY; // Apply gravity
 
-        // 🌍 Handle Ball Bouncing off Inner Boundaries
-        for (let circle of circles) {
-          let distance = Math.sqrt(newX ** 2 + newY ** 2);
-          let innerBoundary = circle.size / 2 - CONFIG.CIRCLE_THICKNESS;
+      let hitCircleId = null;
 
-          // If the ball collides with the inner wall
-          if (distance >= innerBoundary && prev.dy > 0) {
-            newDy = -Math.abs(newDy) * CONFIG.BALL_ELASTICITY; // Bounce up with elasticity
-            newDx = (prev.x / distance) * Math.abs(newDy); // Redirect inward
-            newX = (prev.x / distance) * (innerBoundary - CONFIG.BALL_SIZE / 2); // Keep ball inside
-            newY = (prev.y / distance) * (innerBoundary - CONFIG.BALL_SIZE / 2);
-            break;
-          }
-        }
+      // 🌍 Ball collision with circles (bounces on inner boundary)
+      setCircles((currentCircles: any[]) => {
+        return currentCircles
+          .map((circle) => {
+            let distance = Math.sqrt(x ** 2 + y ** 2);
+            let innerBoundary = circle.size / 2 - CONFIG.CIRCLE_THICKNESS;
 
-        return { x: newX, y: newY, dx: newDx, dy: newDy };
+            // 🔍 Check for collision with inner boundary
+            if (Math.abs(distance - innerBoundary) <= CONFIG.BALL_SIZE / 2 && dy > 0) {
+              if (lastHitCircleId.current !== circle.id) {
+                dy = -Math.abs(dy) * CONFIG.BALL_ELASTICITY; // Perfect bounce
+                hitCircleId = circle.id;
+                ballRef.current = { x, y, dx, dy };
+                setBall({ x, y });
+
+                // ✅ Increment hit count
+                const newHits = circle.hits + 1;
+
+                // 🛑 If circle reached max hits, destroy it & respawn after 4 sec
+                if (newHits >= CONFIG.CIRCLE_MAX_HITS) {
+                  setTimeout(() => {
+                    setCircles((prev) => [
+                      ...prev,
+                      { id: circle.id, size: circle.size, hits: 0 }, // Respawn same circle
+                    ]);
+                  }, 4000);
+                  return null; // Remove circle immediately
+                }
+
+                return { ...circle, hits: newHits };
+              }
+            }
+
+            return circle;
+          })
+          .filter(Boolean); // Remove `null` circles
       });
+      console.log(circles)
+      // setCircles(
+      //   (currentCircles) =>
+      //     currentCircles
+      //       .map((circle) => {
+      //         let distance = Math.sqrt(x ** 2 + y ** 2);
+      //         let innerBoundary = circle.size / 2 - CONFIG.CIRCLE_THICKNESS;
+
+      //         // 🔍 Check for collision with inner boundary
+      //         if (Math.abs(distance - innerBoundary) <= CONFIG.BALL_SIZE / 2 && dy > 0) {
+      //           if (lastHitCircleId.current !== circle.id) {
+      //             dy = -Math.abs(dy) * CONFIG.BALL_ELASTICITY; // Perfect bounce
+      //             hitCircleId = circle.id;
+      //             ballRef.current = { x, y, dx, dy };
+      //             setBall({ x, y });
+      //             return { ...circle, hits: circle.hits + 1 };
+      //           }
+
+      //         }
+
+      //         return circle;
+      //       })
+      //       .filter((circle) => circle.hits < CONFIG.CIRCLE_MAX_HITS) // Destroy circles after 5 hits
+      // );
+
+      if (hitCircleId !== null) {
+        lastHitCircleId.current = hitCircleId; // Store last hit circle to prevent multiple bounces
+      } else {
+        lastHitCircleId.current = null;
+      }
+
+      ballRef.current = { x, y, dx, dy };
+      setBall({ x, y });
 
       requestAnimationFrame(moveBall);
     };
 
-    moveBall();
-  }, [circles]);
+    requestAnimationFrame(moveBall);
+  }, []);
 
   return (
-    <div className="flex items-center justify-center h-screen bg-black">
+    <div className="flex items-center justify-center h-screen">
       <div className="relative flex items-center justify-center">
         {/* 🔵 Rotating Circles */}
-        {circles.map(({ id, size, speed }) => (
+        {circles.map(({ id, size }) => (
           <motion.div
             key={id}
             className="absolute border-2 rounded-full"
@@ -91,7 +152,7 @@ const CircleAnimation = () => {
               clipPath: `polygon(0% ${CONFIG.CIRCLE_OPENING}%, 100% ${CONFIG.CIRCLE_OPENING}%, 100% 100%, 0% 100%)`,
             }}
             animate={{ rotate: 360 }}
-            transition={{ duration: speed, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: CONFIG.ROTATION_SPEED, repeat: Infinity, ease: "linear" }}
           />
         ))}
 

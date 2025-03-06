@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/header/navbar";
 import Footer from "@/components/header/footer";
 import StarryBackground from "@/components/animations/star-background";
+import CircleAnimation from "./test-video/page";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

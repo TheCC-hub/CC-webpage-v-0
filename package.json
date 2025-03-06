@@ -9,8 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth/prisma-adapter": "^2.8.0",
+    "@paypal/react-paypal-js": "^8.8.2",
+    "@prisma/client": "^6.4.1",
     "framer-motion": "^12.4.2",
+    "lucide-react": "^0.475.0",
     "next": "15.1.7",
+    "next-auth": "^4.24.11",
+    "razorpay": "^2.9.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0"

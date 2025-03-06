@@ -3,7 +3,7 @@ import logo from "@/assets/logo/logo1.png"
 import Image from "next/image";
 export default function Testimonial() {
     return (
-        <section className="flex flex-col md:flex-row items-start justify-center gap-12 px-8 py-16 bg-text">
+        <section id="testimonials" className="flex flex-col md:flex-row items-start justify-center gap-12 px-8 py-16 bg-text">
             {/* Heading */}
             <h2 className="text-5xl font-extrabold text-fill text-left">
                 Listen to what <br />

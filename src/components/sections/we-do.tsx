@@ -15,7 +15,7 @@ export default function WhatWeDo({ heading }: { heading: string }) {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
 
-                {wedo?.map((item, idx) => (
+                {wedo?.slice(0, 4).map((item, idx) => (
                     <div className="flex flex-col items-center w-fit px-6" key={item.id}>
                         <div className="bg-blue-500 p-4 rounded-full mb-4">
                             {/* Replace with an actual icon */}
@@ -34,7 +34,7 @@ export default function WhatWeDo({ heading }: { heading: string }) {
                 <h2 className="text-2xl font-extrabold mb-10">We even work on...</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
 
-                    {wedo?.map((item, idx) => (
+                    {wedo?.slice(4, 8).map((item, idx) => (
                         <div className="flex flex-col items-center w-fit px-6" key={item.id}>
                             <div className="bg-blue-500 p-4 rounded-full mb-4">
                                 {/* Replace with an actual icon */}

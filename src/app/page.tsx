@@ -9,7 +9,7 @@ import HeroSection from "@/components/sections/hero-section";
 import Testimonial from "@/components/sections/testimonial";
 import Image from "next/image";
 import bgImg2 from "@/assets/bg/p2.png"
-import { motion } from "framer-motion";
+import { redirect } from "next/navigation";
 
 export default function Home() {
   return (
@@ -46,7 +46,7 @@ export default function Home() {
           </div>
 
           <div className="mt-6 space-x-4">
-            <button className="px-6 py-3 border border-accent rounded-lg shadow-xl hover:bg-text hover:text-accent font-bold transition">Pricing</button>
+            <button onClick={() => redirect("/price")} className="px-6 py-3 border border-accent rounded-lg shadow-xl hover:bg-text hover:text-accent font-bold transition">Pricing</button>
             <button className="px-6 py-3 border border-accent rounded-lg shadow-xl hover:bg-text hover:text-accent font-bold transition">Enquire Now!</button>
           </div>
         </div>

@@ -5,13 +5,15 @@ import { BsCameraReelsFill } from "react-icons/bs";
 import { AiFillInstagram } from "react-icons/ai";
 import { SiYoutubeshorts } from "react-icons/si";
 import { FaPlayCircle } from "react-icons/fa";
+import { CgWebsite } from "react-icons/cg";
+import { GiGearStick } from "react-icons/gi";
 
 export default function PlatformHoppers() {
     return (
         <section className="bg-gradient-to-b from-sred to-text py-16 px-6 text-center">
             <h2 className="text-4xl font-extrabold text-text mb-8">
-                Our videos are platform-hoppers, <br />
-                racking up views wherever they go! 🤯
+                Our videos leap across platforms, <br />racking up views everywhere they land! 🚀
+
             </h2>
 
             {/* Container for Cards */}
@@ -42,8 +44,8 @@ export default function PlatformHoppers() {
                 </div>
                 <div className="flex flex-col gap-4">
                     <div className="w-[350px] h-[170px] bg-white shadow-xl rounded-3xl p-6 flex flex-col justify-center items-center border-4 border-fill">
-                        <IoLogoYoutube className="h-20 w-20 mb-2" />
-                        <p className="font-light text-xl">YouTube Videos</p>
+                        <CgWebsite className="h-20 w-20 mb-2" />
+                        <p className="font-light text-xl">Website Development</p>
                     </div>
 
                     <div className="flex gap-2 items-center">
@@ -59,14 +61,14 @@ export default function PlatformHoppers() {
 
                     </div>
                     <div className="w-[350px] h-[170px] bg-white shadow-lg rounded-3xl p-6 flex flex-col justify-center items-center border-4 border-fill">
-                        <FaEye className="mb-2 h-20 w-20" />
-                        <p className="font-light text-xl">AI Powered Videos</p>
+                        <GiGearStick className="mb-2 h-20 w-20" />
+                        <p className="font-light text-xl">Product Demo</p>
                     </div>
 
                 </div>
 
 
             </div>
-        </section>
+        </section >
     );
 }

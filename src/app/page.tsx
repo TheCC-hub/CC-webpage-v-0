@@ -13,12 +13,12 @@ import { redirect } from "next/navigation";
 
 export default function Home() {
   return (
-    <div className="text-text relative h-fit">
+    <div className="bg-fi relative h-fit">
       {/* animation  */}
       <section className="absolute top-0 right-0 left-0 translate-x w-full -z-[1] min-h-full">
-        <div className="w-[200px] fixed top-40 left-24 animate-slowspin" >
+        {/* <div className="w-[200px] fixed top-40 left-24 animate-slowspin" >
           <Image src={bgImg2} alt="" className="w-full h-full bg-cover " />
-        </div>
+        </div> */}
 
 
 
@@ -29,19 +29,19 @@ export default function Home() {
       <div className="h-screen text-center item-center justify-center flex">
         {/* Hero Section */}
         <div className="flex flex-col items-center justify-center gap-6">
-          <h2 className="text-6xl font-extrabold leading-snug">
-            Maximize <span className="text-pred underline">YouTube</span> Growth,
+          <h2 className="text-5xl font-extrabold leading-snug">
+            Skyrocket Your <span className="text-pred uppercase">YouTube</span> Growth,
             <br />
-            Minimize <span className="text-green-500 underline">Team</span> Spend
+            Slash Your <span className="text-green-500 uppercase">Team</span> Costs!
           </h2>
 
           <div className="">
-            <p className="mt-4 text-2xl font-semibold">
-              Refined by Human Touch; Supercharged by AI; Significant Cost Cutting
+            <p className="mt-4 text-xl font-semibold">
+              Crafted with Human Creativity, Powered by AI, and Optimized for Cost Efficiency.
             </p>
 
-            <p className="mt-4 text-lg font-light">
-              Creators and entrepreneurs striving for YouTube growth turn to us – the ultimate strategy and production team.
+            <p className="mt-4 text-sm font-light">
+              Creators and entrepreneurs aiming for YouTube success trust us—the ultimate strategy and production team.
             </p>
           </div>
 
@@ -53,7 +53,7 @@ export default function Home() {
       </div>
 
       {/* what do we do  */}
-      <Wraper className="w-full min-h-screen flex flex-col items-center justify-center py-40">
+      <Wraper className="w-full min-h-screen flex flex-col items-center justify-center py-40 bg-sred">
         <WhatWeDo heading="What we do!" />
         {/* <WhatWeDo heading="That Isn't All!" /> */}
       </Wraper>

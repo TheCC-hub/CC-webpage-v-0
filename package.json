@@ -11,7 +11,7 @@
   "dependencies": {
     "@auth/prisma-adapter": "^2.8.0",
     "@paypal/react-paypal-js": "^8.8.2",
-    "@prisma/client": "^6.4.1",
+    "@prisma/client": "^6.5.0",
     "framer-motion": "^12.4.2",
     "lucide-react": "^0.475.0",
     "next": "15.1.7",

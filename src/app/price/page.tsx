@@ -34,7 +34,7 @@ const Pricing = () => {
 
                         {/* Button */}
                         <Link
-                            href={`/price/${plan.id + "-" + plan.name}`}
+                            href={`/price/${plan.id}`}
                             className="mt-4 w-full bg-black text-white py-2 rounded-lg text-lg font-bold hover:bg-gray-900 transition"
                         >
                             Let’s Go! 🚀

@@ -21,7 +21,11 @@ export default function WhatWeDo({ heading }: { heading: string }) {
                             {/* Replace with an actual icon */}
                             <span className="text-4xl text-white">{item.icon}</span>
                         </div>
-                        <h3 className="text-[20px] font-extrabold mb-6">{item.titleOne} <br /> {item.titleTwo}</h3>
+                        <h3 className="text-[20px] font-extrabold mb-6 ">
+                            <span className="whitespace-nowrap">{item.titleOne}</span>
+                            <br />
+                            <span className="whitespace-nowrap">{item.titleTwo}</span>
+                        </h3>
                         <p className="text-white mt-2 text-[15px]">{item.body}</p>
                     </div>
                 ))}
@@ -30,8 +34,8 @@ export default function WhatWeDo({ heading }: { heading: string }) {
 
             <div className="relative mt-20">
 
-                <h2 className="text-6xl font-extrabold mb-2">That Isn't All!</h2>
-                <h2 className="text-2xl font-extrabold mb-10">We even work on...</h2>
+                <h2 className="text-6xl font-extrabold mb-2">And That’s Just the Start!</h2>
+                <h2 className="text-2xl font-extrabold mb-10">🚀 We do even more to help you grow effortlessly!</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
 
                     {wedo?.slice(4, 8).map((item, idx) => (
@@ -40,7 +44,13 @@ export default function WhatWeDo({ heading }: { heading: string }) {
                                 {/* Replace with an actual icon */}
                                 <span className="text-4xl text-white">{item.icon}</span>
                             </div>
-                            <h3 className="text-[20px] font-extrabold mb-6">{item.titleOne} <br /> {item.titleTwo}</h3>
+                            <h3 className="text-[20px] font-extrabold mb-6 ">
+                                <span className="whitespace-nowrap">{item.titleOne}</span>
+                                <br />
+                                <span>&</span>
+                                <br />
+                                <span className="whitespace-nowrap">{item.titleTwo}</span>
+                            </h3>
                             <p className="text-white mt-2 text-[15px]">{item.body}</p>
                         </div>
                     ))}

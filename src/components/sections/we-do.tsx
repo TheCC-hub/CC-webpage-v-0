@@ -47,8 +47,6 @@ export default function WhatWeDo({ heading }: { heading: string }) {
                             <h3 className="text-[20px] font-extrabold mb-6 ">
                                 <span className="whitespace-nowrap">{item.titleOne}</span>
                                 <br />
-                                <span>&</span>
-                                <br />
                                 <span className="whitespace-nowrap">{item.titleTwo}</span>
                             </h3>
                             <p className="text-white mt-2 text-[15px]">{item.body}</p>

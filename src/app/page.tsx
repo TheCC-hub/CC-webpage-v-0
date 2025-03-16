@@ -6,6 +6,7 @@ import Wraper from "@/components/wraper";
 import HeroSection from "@/components/sections/hero-section";
 import Testimonial from "@/components/sections/testimonial";
 import { redirect } from "next/navigation";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -31,8 +32,12 @@ export default function Home() {
           </div>
 
           <div className="mt-6 space-x-4">
-            <button onClick={() => redirect("/price")} className="px-6 py-3 border border-accent rounded-lg shadow-xl hover:bg-text hover:text-accent font-bold transition">Pricing</button>
-            <button className="px-6 py-3 border border-accent rounded-lg shadow-xl hover:bg-text hover:text-accent font-bold transition">Enquire Now!</button>
+            <Link href={"/price"} className="px-6 py-3 border border-accent rounded-lg shadow-xl hover:bg-text hover:text-accent font-bold transition">
+              Pricing
+            </Link>
+            <Link href={"https://calendly.com/clip-curve"} target="_blank" className="px-6 py-3 border border-accent rounded-lg shadow-xl hover:bg-text hover:text-accent font-bold transition">
+              Enquire Now!
+            </Link>
           </div>
         </div>
       </div>
@@ -40,7 +45,6 @@ export default function Home() {
       {/* what do we do  */}
       <Wraper className="w-full min-h-screen flex flex-col items-center justify-center py-40 bg-sred">
         <WhatWeDo heading="What we do!" />
-        {/* <WhatWeDo heading="That Isn't All!" /> */}
       </Wraper>
 
       {/* <HowItWorks /> */}

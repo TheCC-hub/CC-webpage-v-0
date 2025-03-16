@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useState } from "react";
-import { CalendarIcon, Contact, Currency, LockIcon } from "lucide-react";
+import { CalendarIcon, LockIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
 import { signIn, signOut, useSession } from "next-auth/react";
@@ -86,7 +86,7 @@ export default function Checkout() {
     }, [startDate])
 
     return (
-        <div className="flex justify-center items-start min-h-screen p-6 bg-gradient-to-r from-pink-100 to-blue-100 text-black/70">
+        <div className="flex justify-center items-start min-h-screen p-6 bg-gradient-to-r  from-sred via-text to-sred text-black/70">
             <Script src="https://checkout.razorpay.com/v1/checkout.js" />
 
             <div className="bg-white p-8 rounded-xl shadow-lg max-w-3xl w-full">

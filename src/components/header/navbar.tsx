@@ -44,7 +44,13 @@ export default function Navbar() {
                     <Link href={"/faq"}>FAQs</Link>
                 </li>
             </ul>
-            <button className="border-2 font-extrabold text-xl border-accent px-4 py-2 shadow-xl rounded-full hover:bg-accent hover:text-white transition">Free Consultation</button>
+            <Link
+                target='_blank'
+                href={"https://calendly.com/clip-curve"}
+                className="border-2 font-extrabold text-xl border-accent px-4 py-2 shadow-xl rounded-full hover:bg-accent hover:text-white transition"
+            >
+                Connect Us
+            </Link>
         </nav>
     )
 }

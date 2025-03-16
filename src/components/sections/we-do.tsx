@@ -1,4 +1,4 @@
-import { wedo } from "@/data/what-we-do";
+import { WEDO } from "@/data/what-we-do.data";
 import React from "react";
 import Image from "next/image";
 import bgImg1 from "@/assets/bg/p1.png"
@@ -15,17 +15,17 @@ export default function WhatWeDo({ heading }: { heading: string }) {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
 
-                {wedo?.slice(0, 4).map((item, idx) => (
+                {WEDO?.slice(0, 4).map((item, idx) => (
                     <div className="flex flex-col items-center w-fit px-6" key={item.id}>
-                        <div className="bg-blue-500 p-4 rounded-full mb-4">
-                            {/* Replace with an actual icon */}
-                            <span className="text-4xl text-white">{item.icon}</span>
+                        <div className="bg-blue-500 p-4 rounded-full mb-4 flex justify-center items-center text-4xl text-white">
+                            {item.icon}
                         </div>
-                        <h3 className="text-[20px] font-extrabold mb-6 ">
+
+                        <div className="text-[20px] font-extrabold mb-6 items-center flex flex-col gap-0">
                             <span className="whitespace-nowrap">{item.titleOne}</span>
-                            <br />
+                            <span className="whitespace-nowrap text-xl">&</span>
                             <span className="whitespace-nowrap">{item.titleTwo}</span>
-                        </h3>
+                        </div>
                         <p className="text-white mt-2 text-[15px]">{item.body}</p>
                     </div>
                 ))}
@@ -34,21 +34,22 @@ export default function WhatWeDo({ heading }: { heading: string }) {
 
             <div className="relative mt-20">
 
-                <h2 className="text-6xl font-extrabold mb-2">And That’s Just the Start!</h2>
+                <h2 className="text-6xl font-extrabold mb-5">And That’s Just the Start!</h2>
                 <h2 className="text-2xl font-extrabold mb-10">🚀 We do even more to help you grow effortlessly!</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
 
-                    {wedo?.slice(4, 8).map((item, idx) => (
+                    {WEDO?.slice(4, 8).map((item, idx) => (
                         <div className="flex flex-col items-center w-fit px-6" key={item.id}>
-                            <div className="bg-blue-500 p-4 rounded-full mb-4">
-                                {/* Replace with an actual icon */}
-                                <span className="text-4xl text-white">{item.icon}</span>
+
+                            <div className="bg-blue-500 p-4 rounded-full mb-4 flex justify-center items-center text-4xl text-white">
+                                {item.icon}
                             </div>
-                            <h3 className="text-[20px] font-extrabold mb-6 ">
+
+                            <div className="text-[20px] font-extrabold mb-6 items-center flex flex-col gap-0">
                                 <span className="whitespace-nowrap">{item.titleOne}</span>
-                                <br />
+                                <span className="whitespace-nowrap text-xl">&</span>
                                 <span className="whitespace-nowrap">{item.titleTwo}</span>
-                            </h3>
+                            </div>
                             <p className="text-white mt-2 text-[15px]">{item.body}</p>
                         </div>
                     ))}

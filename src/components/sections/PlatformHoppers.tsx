@@ -10,7 +10,7 @@ import { GiGearStick } from "react-icons/gi";
 
 export default function PlatformHoppers() {
     return (
-        <section className="bg-gradient-to-b from-sred to-text py-16 px-6 text-center">
+        <section className="bg-gradient-to-b from-sfill to-text py-16 px-6 text-center">
             <h2 className="text-4xl font-extrabold text-text mb-8">
                 Our videos leap across platforms, <br />racking up views everywhere they land! 🚀
 

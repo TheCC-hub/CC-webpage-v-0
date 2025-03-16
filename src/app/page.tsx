@@ -10,15 +10,15 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="bg-fi relative h-fit">
+    <div className="bg-secondary relative h-fit">
 
       <div className="h-screen text-center item-center justify-center flex">
         {/* Hero Section */}
         <div className="flex flex-col items-center justify-center gap-6">
           <h2 className="text-[54px] font-extrabold leading-snug">
-            Skyrocket Your <span className="text-pred uppercase">YouTube</span> Growth,
+            Skyrocket Your <span className="text-primary uppercase">YouTube</span> Growth,
             <br />
-            Slash Your <span className="text-green-500 uppercase">Team</span> Costs!
+            Slash Your <span className="text-accent uppercase">Team</span> Costs!
           </h2>
 
           <div className="">
@@ -32,10 +32,10 @@ export default function Home() {
           </div>
 
           <div className="mt-6 space-x-4">
-            <Link href={"/price"} className="px-6 py-3 border border-accent rounded-lg shadow-xl hover:bg-text hover:text-accent font-bold transition">
+            <Link href={"/price"} className="px-6 py-3 border border-accent rounded-lg shadow-xl hover:bg-accent hover:text-white font-bold transition">
               Pricing
             </Link>
-            <Link href={"https://calendly.com/clip-curve"} target="_blank" className="px-6 py-3 border border-accent rounded-lg shadow-xl hover:bg-text hover:text-accent font-bold transition">
+            <Link href={"https://calendly.com/clip-curve"} target="_blank" className="px-6 py-3 border border-accent rounded-lg shadow-xl hover:bg-accent hover:text-white font-bold transition">
               Enquire Now!
             </Link>
           </div>
@@ -43,7 +43,7 @@ export default function Home() {
       </div>
 
       {/* what do we do  */}
-      <Wraper className="w-full min-h-screen flex flex-col items-center justify-center py-40 bg-sred">
+      <Wraper className="w-full min-h-screen flex flex-col items-center justify-center py-40 bg-sfill">
         <WhatWeDo heading="What we do!" />
       </Wraper>
 

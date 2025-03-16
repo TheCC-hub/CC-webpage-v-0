@@ -31,25 +31,25 @@ export default function Navbar() {
             </Link>
 
             <ul className="flex space-x-6 font-semibold">
-                <li className={`${pathName === "/" ? "text-pred" : "text-text"} cursor-pointer hover:text-sred font-extrabold text-xl`}>
+                <li className={`${pathName === "/" ? "text-primary" : "text-text"} cursor-pointer hover:text-accent font-extrabold text-xl`}>
                     <Link href={"/"}>Home</Link>
                 </li>
-                <li className={`${pathName === "/case-studies" ? "text-pred" : "text-text"} cursor-pointer hover:text-sred font-extrabold text-xl`}>
+                <li className={`${pathName === "/case-studies" ? "text-primary" : "text-text"} cursor-pointer hover:text-accent font-extrabold text-xl`}>
                     <Link href={"/case-studies"}>Case Studies</Link>
                 </li>
-                <li className={`${pathName === "/testimonials" ? "text-pred" : "text-text"} cursor-pointer hover:text-sred font-extrabold text-xl`}>
+                <li className={`${pathName === "/testimonials" ? "text-primary" : "text-text"} cursor-pointer hover:text-accent font-extrabold text-xl`}>
                     <Link href={"/"} onClick={() => scrollToElementById("testimonials")}>Testimonials</Link>
                 </li>
-                <li className={`${pathName === "/faq" ? "text-pred" : "text-text"} cursor-pointer hover:text-sred font-extrabold text-xl`}>
+                <li className={`${pathName === "/faq" ? "text-primary" : "text-text"} cursor-pointer hover:text-accent font-extrabold text-xl`}>
                     <Link href={"/faq"}>FAQs</Link>
                 </li>
             </ul>
             <Link
                 target='_blank'
                 href={"https://calendly.com/clip-curve"}
-                className="border-2 font-extrabold text-xl border-accent px-4 py-2 shadow-xl rounded-full hover:bg-accent hover:text-white transition"
+                className="border-2 font-extrabold text-xl border-accent px-4 py-2 shadow-xl rounded-xl hover:bg-accent hover:text-white transition"
             >
-                Connect Us
+                Schedule Meet
             </Link>
         </nav>
     )

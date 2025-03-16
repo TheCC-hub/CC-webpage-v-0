@@ -14,11 +14,13 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        pred: "#ed1c31",
-        sred: "#f34420",
-        accent: "#ff6600", /* orange */
         fill: "#333333",
-        text: "#c0c0c0"
+        sfill: "#200A0A",
+        primary: "#ED1C31",/* red */
+        secondary: "#1A1A1A",/* Dark Gray/Black */
+        accent: "#FFD700", /* gold */
+        text: "#FFFFFF",/* white */
+        muted: "#888888", /* gray */
         // accent: "#f76f6f",
         // fill: "#333333",
         // text: "#f5f5f5"

@@ -8,6 +8,11 @@ import SignupPopup from "@/components/auth/signup";
 import LoginPopup from "@/components/auth/login";
 import { isFutureOrToday } from "@/utils/helper-functions";
 
+declare global {
+    interface Window {
+        Razorpay: any;
+    }
+}
 
 export default function Checkout() {
     const [startDate, setStartDate] = useState(new Date().toISOString().split("T")[0]);

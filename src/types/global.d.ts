@@ -3,4 +3,5 @@ declare global {
         Razorpay: any;
     }
 }
+
 export { };

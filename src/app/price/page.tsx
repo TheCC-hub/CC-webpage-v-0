@@ -8,7 +8,7 @@ const Pricing = () => {
     return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-sred via-text to-sred p-6">
             {/* Pricing Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-20 max-w-6xl mt-28">
                 {/* Pricing Plans */}
                 {plans.map((plan, index) => (
                     <div
@@ -62,7 +62,7 @@ const plans = [
     {
         id: 1,
         name: "Kickoff Kit",
-        price: "888",
+        price: "499",
         description: "Start strong with our Kickstart Creator Kit, essential features & personalized assistance included.",
         features: [
             "+ 2 Long-Forms",
@@ -78,12 +78,12 @@ const plans = [
     {
         id: 2,
         name: "Rise Up",
-        price: "1,776",
+        price: "999",
         description: "Elevate your game with Rise Up, advanced features & multi-channel publishing.",
         features: [
+            "Everything in Kickoff Kit and...",
             "+ 4 long-forms",
             "+ 20 Reels",
-            "Everything in Kickoff Kit and...",
             "+ Thumbnails",
             "+ Chat Assistance",
             "+ Publishing on 3 channels",
@@ -93,7 +93,7 @@ const plans = [
     {
         id: 3,
         name: "Mastery Move",
-        price: "2,664",
+        price: "1,699",
         description: "Unleash mastery with Mastermind Mastery Move, all-inclusive features & promotional opportunities.",
         features: [
             "Everything in Rise Up Plan and...",

@@ -10,12 +10,15 @@
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.8.0",
+    "@mux/mux-player": "^3.3.0",
+    "@mux/mux-player-react": "^3.3.0",
     "@paypal/react-paypal-js": "^8.8.2",
     "@prisma/client": "^6.5.0",
     "framer-motion": "^12.4.2",
     "lucide-react": "^0.475.0",
     "next": "15.1.7",
     "next-auth": "^4.24.11",
+    "nodemailer": "^6.10.0",
     "razorpay": "^2.9.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -24,6 +27,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
+    "@types/nodemailer": "^6.4.17",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

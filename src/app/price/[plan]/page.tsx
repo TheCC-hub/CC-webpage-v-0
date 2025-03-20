@@ -1,20 +1,19 @@
 "use client"
 import { useEffect, useState } from "react";
-import { CalendarIcon, LockIcon } from "lucide-react";
+import { CalendarIcon, Loader, Loader2, LoaderPinwheel, LockIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
 import { signIn, signOut, useSession } from "next-auth/react";
+import SignupPopup from "@/components/auth/signup";
+import LoginPopup from "@/components/auth/login";
+import { isFutureOrToday } from "@/utils/helper-functions";
 
-
-declare global {
-    interface Window {
-        Razorpay: any;
-    }
-}
 
 export default function Checkout() {
-    const [startDate, setStartDate] = useState("");
+    const [startDate, setStartDate] = useState(new Date().toISOString().split("T")[0]);
     const [isProcessing, setIsProcessing] = useState(false);
+    const [popup, setPopup] = useState("");
+    const [isFuture, setIsFuture] = useState<boolean>(false);
 
     const pathName = usePathname()
     const split = pathName.split("/");
@@ -22,12 +21,32 @@ export default function Checkout() {
     const planDetails = plans.filter((item) => String(item.id) === split[split.length - 1])
     console.log(pathName, planDetails)
 
-    const AMOUNT = 100;
-
     const { data: session } = useSession();
     console.log(session)
 
+    const handleMail = async () => {
+        try {
+            const response = await fetch("/api/sendMail", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    email: session?.user?.email,
+                    name: session?.user?.name,
+                    amount: "888", // or dynamic value
+                }),
+            });
+
+            const data = await response.json();
+            console.log(data)
+            alert("Payment successful & email sent!")
+
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
     async function handlePayment() {
+
         setIsProcessing(true)
         try {
             const response = await fetch("/api/create-order", { method: "POST" });
@@ -37,11 +56,13 @@ export default function Checkout() {
                 key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
                 amount: planDetails[0].price * 100,
                 Currency: "INR",
-                name: "ClipCurve",
+                name: session ? session?.user?.name : "",
                 description: "Test Transaction",
                 order_id: data.orderID,
-                handler: function (request: any) {
+                handler: async function (request: any) {
                     console.log("payment successfull", response);
+                    await handleMail();
+                    setIsProcessing(false)
                 },
                 prefill: {
                     name: session ? session?.user?.name : "",
@@ -57,39 +78,30 @@ export default function Checkout() {
             rzp1.open()
         } catch (error) {
             console.log("payment faile", error)
-        } finally {
             setIsProcessing(false)
         }
     }
-    const isFutureOrToday = (date: string | Date): boolean => {
-        const givenDate = new Date(date);
-        const today = new Date();
-
-        // Set time to midnight to compare only the date part
-        today.setHours(0, 0, 0, 0);
-        givenDate.setHours(0, 0, 0, 0);
-
-        return givenDate >= today;
-    };
 
     const handleBuyNow = async () => {
-        if (!startDate) return
+        if (!isFuture) return
 
         await handlePayment()
     }
 
     useEffect(() => {
-        if (!isFutureOrToday(startDate)) {
-            console.log("cannot choose past date")
-            setStartDate("")
-        }
-    }, [startDate])
+        setIsFuture(isFutureOrToday(startDate));
+    }, [startDate]);
+
 
     return (
-        <div className="flex justify-center items-start min-h-screen p-6 bg-gradient-to-r  from-sred via-text to-sred text-black/70">
+        <div className="flex justify-center items-start min-h-screen p-6 bg-gradient-to-r relative from-sred via-text to-sred text-black/70">
             <Script src="https://checkout.razorpay.com/v1/checkout.js" />
 
-            <div className="bg-white p-8 rounded-xl shadow-lg max-w-3xl w-full">
+            {isProcessing && <div className="absolute top-0 left-0 w-full h-full bg-black/40 flex justify-center items-center">
+                <Loader2 className="text-white animate-spin" />
+            </div>}
+
+            <div className="bg-white p-8 rounded-xl shadow-lg max-w-3xl w-full mt-28">
                 <h2 className="text-2xl text-black/60 font-bold mb-6">Checkout</h2>
                 {/* Sign Up Section */}
                 <div className="border-b pb-4 mb-4">
@@ -109,15 +121,17 @@ export default function Checkout() {
                             </button>
                         </div> :
                         <div className="flex items-center justify-center gap-2 mt-2">
-                            <button onClick={() => signIn("google")} className="py-1 text-center w-full bg-black text-white border border-black">
+                            <button onClick={() => setPopup("signup")} className="py-1 text-center w-full bg-black text-white border border-black">
                                 Sign Up
                             </button>
-                            <button onClick={() => signIn("google")} className="py-1 text-center w-full bg-white text-black border border-black">
+                            <button onClick={() => setPopup("login")} className="py-1 text-center w-full bg-white text-black border border-black">
                                 Log In
                             </button>
 
                         </div>}
                 </div>
+                {popup === "signup" && <SignupPopup setPopup={setPopup} />}
+                {popup === "login" && <LoginPopup setPopup={setPopup} />}
 
                 {/* Payment Section */}
                 <div className="border-b pb-4 mb-4">
@@ -134,7 +148,7 @@ export default function Checkout() {
                 </div>
 
                 {/* Order Summary */}
-                <div className="border p-4 rounded-lg shadow-sm">
+                <div className={`"border p-4 rounded-lg shadow-sm`}>
                     <h3 className="text-lg font-semibold">Order summary</h3>
 
                     {/* Start Date Picker */}
@@ -146,7 +160,7 @@ export default function Checkout() {
                             type="date"
                             value={startDate}
                             onChange={(e) => setStartDate(e.target.value)}
-                            className="w-full border rounded-md p-2 pl-10"
+                            className={`w-full border rounded-md p-2 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent" ${!isFuture ? "border-red-500" : "border-gray-300"}`}
                             required
                         />
                         <CalendarIcon className="absolute left-3 top-3 text-gray-500 w-5 h-5" />

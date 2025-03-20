@@ -15,8 +15,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         fill: "#333333",
-        sfill: "#200A0A",
-        primary: "#ED1C31",/* red */
+        sFill: "#200A0A",
+        primary: "#f34420",/* red */
+        // primary: "#ED1C31",/* red */
         secondary: "#1A1A1A",/* Dark Gray/Black */
         accent: "#FFD700", /* gold */
         text: "#FFFFFF",/* white */
@@ -28,5 +29,6 @@ export default {
       },
     },
   },
+
   plugins: [],
 } satisfies Config;

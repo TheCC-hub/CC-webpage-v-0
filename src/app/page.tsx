@@ -5,8 +5,8 @@ import WhatWeDo from "@/components/sections/we-do";
 import Wraper from "@/components/wraper";
 import HeroSection from "@/components/sections/hero-section";
 import Testimonial from "@/components/sections/testimonial";
-import { redirect } from "next/navigation";
 import Link from "next/link";
+import VideoCarousel from "@/components/videoCarousel";
 
 export default function Home() {
   return (
@@ -41,6 +41,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <VideoCarousel />
 
       {/* what do we do  */}
       <Wraper className="w-full min-h-screen flex flex-col items-center justify-center py-40 bg-sfill">

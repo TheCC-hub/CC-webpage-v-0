@@ -1,6 +1,5 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import VideoMuxPlayer from "./videoPlayer";
 
 const videos = [
   "https://drive.google.com/file/d/19i8d5uL9gT8osjvQwkIGJEOcE5wgSOax/preview",

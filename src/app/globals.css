@@ -25,7 +25,18 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
-
+body {
+  background: linear-gradient(
+    to right, 
+    #B8B5A8 0%, #B8B5A8 15%,   /* Muted Beige (15%) */
+    #A82F0F 15%, #A82F0F 35%,  /* Deep Red (20%) */
+    #9B3D57 35%, #9B3D57 50%,  /* Dark Pink (15%) */
+    #C26F84 50%, #C26F84 75%,  /* Muted Coral (25%) */
+    #B98616 75%, #B98616 100%  /* Deep Gold (25%) */
+  );
+  background-attachment: fixed;
+  min-height: 100vh;
+}
 @keyframes move-diagonal {
   from {
     transform: translate(-20vw, 100vh);

@@ -7,9 +7,6 @@ export default function WhatWeDo({ heading }: { heading: string }) {
     return (
         <section className=" text-white py-16 px-6 text-center h-full gap-5 flex flex-col">
             <div className="relative">
-                {/* <div className="w-[200px] -top-36 absolute right-36 rotate" >
-                    <Image src={bgImg1} alt="" className="w-full h-full bg-cover " />
-                </div> */}
                 <h2 className="text-5xl font-extrabold mb-10">{heading}</h2>
             </div>
 
@@ -26,7 +23,7 @@ export default function WhatWeDo({ heading }: { heading: string }) {
                             <span className="whitespace-nowrap text-xl">&</span>
                             <span className="whitespace-nowrap">{item.titleTwo}</span>
                         </div>
-                        <p className="text-white mt-2 text-[15px]">{item.body}</p>
+                        <p className="mt-2 text-[15px]">{item.body}</p>
                     </div>
                 ))}
 
@@ -50,7 +47,7 @@ export default function WhatWeDo({ heading }: { heading: string }) {
                                 <span className="whitespace-nowrap text-xl">&</span>
                                 <span className="whitespace-nowrap">{item.titleTwo}</span>
                             </div>
-                            <p className="text-white mt-2 text-[15px]">{item.body}</p>
+                            <p className=" mt-2 text-[15px]">{item.body}</p>
                         </div>
                     ))}
                 </div>

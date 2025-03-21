@@ -7,6 +7,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import SignupPopup from "@/components/auth/signup";
 import LoginPopup from "@/components/auth/login";
 import { isFutureOrToday } from "@/utils/helper-functions";
+import Background from "@/components/boubble-background";
 
 declare global {
     interface Window {
@@ -99,14 +100,17 @@ export default function Checkout() {
 
 
     return (
-        <div className="flex justify-center items-start min-h-screen p-6 bg-gradient-to-r relative from-sred via-text to-sred text-black/70">
+        <div className="flex justify-center items-start min-h-screen p-6 relative from-sred via-text to-sred text-black/70">
             <Script src="https://checkout.razorpay.com/v1/checkout.js" />
+            <div className="absolute top-0 left-0 w-full h-full -z-10">
+                <Background />
+            </div>
 
             {isProcessing && <div className="absolute top-0 left-0 w-full h-full bg-black/40 flex justify-center items-center">
                 <Loader2 className="text-white animate-spin" />
             </div>}
 
-            <div className="bg-white p-8 rounded-xl shadow-lg max-w-3xl w-full mt-28">
+            <div className="bg-white/60 dark:bg-white/85 p-8 rounded-xl shadow-lg max-w-3xl w-full mt-28">
                 <h2 className="text-2xl text-black/60 font-bold mb-6">Checkout</h2>
                 {/* Sign Up Section */}
                 <div className="border-b pb-4 mb-4">

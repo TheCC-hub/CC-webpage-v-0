@@ -1,7 +1,6 @@
 "use client"
 import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { circle } from "framer-motion/client";
 
 // 🎛 CONFIGURATION (Adjustable Properties)
 const CONFIG = {

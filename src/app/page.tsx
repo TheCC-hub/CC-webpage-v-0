@@ -10,6 +10,7 @@ import bgImage from "@/assets/bg/background.png"
 import Image from "next/image";
 import Background from "@/components/boubble-background";
 import windoeScreen from "@/assets/bg/window-screen.png"
+import heroImage from "@/assets/bg/hero-image.jpg"
 
 export default function Home() {
   return (
@@ -54,8 +55,13 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-[60%]">
-          <Image src={windoeScreen} className="inset-0 w-full object-cover" alt="background" />
+        {/* Hero Image */}
+        <div className="w-[60%] relative">
+          <Image src={windoeScreen} className="inset-0 w-full object-cover" alt="background" width={1000} height={1000} />
+
+          <div className="absolute top-10 left-5 w-[623px] h-[397px] overflow-hidden rounded-sm">
+            <Image src={heroImage} className=" inset-0 w-full h-full object-cover" alt="hero-image" width={1000} height={1000} />
+          </div>
         </div>
 
       </div>

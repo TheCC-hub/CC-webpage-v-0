@@ -19,7 +19,7 @@ const ThemeButton = () => {
     return (
         <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 transition-all hover:bg-gray-300 dark:hover:bg-gray-700"
+            className="p-2 rounded-full bg-gray-200 dark:bg-gray-800"
         >
             {theme === "dark" ? <Sun className="text-yellow-500" /> : <Moon className="text-gray-900" />}
         </button>

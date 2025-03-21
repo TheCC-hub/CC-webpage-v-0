@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import ThemeButton from '../ThemeButton'
-import { useSession } from 'next-auth/react'
+import { signIn, useSession } from 'next-auth/react'
 
 export default function Navbar() {
     const [isVisible, setIsVisible] = useState(true);
@@ -80,13 +80,12 @@ export default function Navbar() {
                         Dashboard
                     </Link>
                 ) :
-                    <Link
-                        target='_blank'
-                        href={"https://calendly.com/clip-curve"}
+                    <button
+                        onClick={() => signIn("google")}
                         className="border-2 font-bold text-xl border-black dark:border-white px-4 py-1 shadow-xl rounded-lg hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition text-black dark:text-white"
                     >
                         Login
-                    </Link>
+                    </button>
                 }
 
 

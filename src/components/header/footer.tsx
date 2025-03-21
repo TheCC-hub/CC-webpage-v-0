@@ -1,6 +1,7 @@
 
 import logo from "@/assets/logo/logo1.png"
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
     return (
@@ -32,13 +33,16 @@ export default function Footer() {
                             <hr className="w-40 h-[0.1px] bg-white mt-1" />
                         </div> */}
 
+                        <Link href={"/privacy-policy"} className="mt-4 text-sm md:mt-0">Privacy Policy</Link>
+                        <Link href={"/t&c"} className="mt-4 text-sm md:mt-0">Terms and Conditions</Link>
+                        <Link href={"/dssPolicy"} className="mt-4 text-sm md:mt-0">Digital Services Shipping Policy</Link>
+                        <Link href={"/carPolicy"} className="mt-4 text-sm md:mt-0">Cancellation and Refund Policy</Link>
                         <p className="text-sm">Email: <a href="mailto:Team@grow-co.net" className="underline">Team@clip-curve.net</a></p>
                         <div className="flex items-center justify-end gap-4">
 
-                            <p className="mt-4 text-sm md:mt-0">Terms and Conditions</p>
                             {/* Bottom Text */}
                             <p className="text-sm text-white mt-6 md:mt-0">
-                                All Rights Reserved by Tonkdu LLP ("ClipCurve")
+                                All Rights Reserved by ("ClipCurve")
                             </p>
                         </div>
                     </div>

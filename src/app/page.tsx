@@ -19,8 +19,8 @@ export default function Home() {
       <div className="h-screen text-center items-center justify-center flex px-10">
 
         {/* bg-image  */}
-        <div className="absolute w-full h-full -z-10 top-[-80px]">
-          <Image src={bgImage} className="inset-0 w-full object-cover" alt="background" />
+        <div className="absolute w-full min-h-screen md:h-auto h-screen -z-10 lg:top-[-80px] top-0">
+          <Image src={bgImage} className="inset-0 w-full h-full object-cover" alt="background" />
         </div>
 
         {/* Hero Section */}
@@ -56,7 +56,7 @@ export default function Home() {
         </div>
 
         {/* Hero Image */}
-        <div className="w-[60%] relative">
+        <div className="w-[60%] relative hidden lg:flex">
           <Image src={windoeScreen} className="inset-0 w-full object-cover" alt="background" width={1000} height={1000} />
 
           <div className="absolute top-10 left-5 w-[623px] h-[397px] overflow-hidden rounded-sm">
@@ -75,8 +75,8 @@ export default function Home() {
         <div className="absolute top-0 left-0 w-full h-full -z-10">
           <Background />
         </div>
-        <WhatWeDo heading="What we do!" />
 
+        <WhatWeDo />
       </section>
 
       {/* <HowItWorks /> */}

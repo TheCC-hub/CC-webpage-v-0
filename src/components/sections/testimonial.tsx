@@ -36,14 +36,14 @@ export default function Testimonial() {
 
                     {/* Testimonial Text */}
                     <blockquote className="mt-4 italic text-xl text-gray-900 text-center">
-                        "We can't wait to see where we will be in 1 year with GrowCo!"
+                        "We can't wait to see where we will be in 1 year with ClipCurve!"
                     </blockquote>
 
                     {/* Detailed Review */}
                     <p className="mt-4 text-gray-700 text-sm">
                         In just 60 days, our YouTube channel has grown 10x in real-life subscribers. We have moved from
                         6,000 views to 55,000 views per day.
-                        <span className="italic"> GrowCo is a wonderful investment and they have rocked our site in such a short time.</span>
+                        <span className="italic"> CC is a wonderful investment and they have rocked our site in such a short time.</span>
                     </p>
 
                     {/* Pagination Dots */}

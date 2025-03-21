@@ -2,10 +2,12 @@ import { WEDO } from "@/data/what-we-do.data";
 import React from "react";
 import Image from "next/image";
 import bgImg1 from "@/assets/bg/p1.png"
+import Background from "../boubble-background";
 
 export default function WhatWeDo({ heading }: { heading: string }) {
     return (
-        <section className=" text-white py-16 px-6 text-center h-full gap-5 flex flex-col">
+        <section className="py-16 px-6 text-center h-full gap-5 flex flex-col">
+
             <div className="relative">
                 <h2 className="text-5xl font-extrabold mb-10">{heading}</h2>
             </div>

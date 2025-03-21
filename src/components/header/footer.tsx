@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <section className="px-32 py-10">
+        <section className="">
             <footer className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 md:px-16 lg:px-32 py-10 flex flex-col justify-between items-start shadow-lg rounded-lg">
                 <div className="w-full text-left flex items-center justify-start gap-3">
                     <Image src={footer.logo} alt="" width={500} height={500} className="h-10 w-auto" />

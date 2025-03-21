@@ -33,14 +33,14 @@ export default function Navbar() {
 
     return (
         <section
-            className={`flex items-center justify-center w-full fixed z-50 transition-transform duration-500 ease-in-out
-         ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
+        //     className={`flex items-center justify-center w-full fixed z-50 transition-transform duration-500 ease-in-out
+        //  ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
         >
             <span className="absolute top-5 right-5 z-50">
                 <ThemeButton />
             </span>
 
-            <nav className="flex justify-between items-center py-4 border-b-[0.1px] border-text shadow-md w-full top-0 left-0 px-20  bg-background">
+            <nav className="flex justify-between items-center py-4 border-b-[0.1px] border-text shadow-md w-full top-0 left-0 px-20 bg-transparent">
                 <Link href={"/"} className='flex items-center'>
                     <div className='flex items-center justify-start gap-2'>
                         <div className='h-[45px] flex items-center '>

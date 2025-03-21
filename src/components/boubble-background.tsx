@@ -28,6 +28,7 @@ const FloatingImage = ({ src, className }: { src: any; className: string }) => {
         <motion.div
             animate={{
                 y: ["0%", "5%", "0%"],
+                // x: ["0%", "5%", "0%"],
             }}
             transition={{
                 duration: 6,

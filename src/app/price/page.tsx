@@ -43,7 +43,7 @@ const Pricing = () => {
                             href={`/price/${plan.id}`}
                             className="bg-black text-white py-2 rounded-lg text-lg font-bold hover:bg-gray-900 transition px-3"
                         >
-                            Let’s Go! 🚀
+                            Subscribe 🚀
                         </Link>
 
                         {/* Features List */}

@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/header/navbar";
 import Footer from "@/components/header/footer";
-import StarryBackground from "@/components/animations/star-background";
 import SessionProvider from "./SessionProvider";
 import { ThemeProvider } from "@/components/ThemeButton";
 
@@ -37,6 +36,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased text-black dark:text-white relative bg-white dark:bg-black`}
       >
+        <div className="absolute inset-0 bg-gradient-to-br from-[#F9F7FE] dark:from-[#1E1B29] via-[#F2E9FC] dark:via-[#2C2A3F] to-[#E8F2FE] dark:to-[#3A3750] -z-50 "></div>
         <ThemeProvider>
 
           <SessionProvider>

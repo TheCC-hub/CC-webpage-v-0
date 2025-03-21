@@ -1,4 +1,5 @@
 "use client"
+import Background from "@/components/boubble-background";
 import Link from "next/link";
 import React from "react";
 import { FaCaretRight } from "react-icons/fa6";
@@ -7,13 +8,16 @@ const Pricing = () => {
 
     return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-sred via-text to-sred p-6">
+            <div className="absolute top-0 left-0 w-full h-full -z-10">
+                <Background />
+            </div>
             {/* Pricing Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-20 max-w-6xl mt-28">
                 {/* Pricing Plans */}
                 {plans.map((plan, index) => (
                     <div
                         key={index}
-                        className="relative bg-white text-black border-2 border-black shadow-lg p-6 rounded-xl text-center w-full"
+                        className="relative bg-white/60 dark:bg-white/85  text-black border-2 border-black shadow-lg p-6 rounded-xl text-center w-full"
                     >
                         {/* Highlight Badge */}
                         {plan?.highlight && (

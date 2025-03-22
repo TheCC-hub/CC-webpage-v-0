@@ -40,8 +40,8 @@ const Pricing = () => {
 
                         {/* Button */}
                         <Link
-                            href={`/price/${plan.id}`}
-                            className="bg-black text-white py-2 rounded-lg text-lg font-bold hover:bg-gray-900 transition px-3"
+                            href={`/price/${plan.name.toLowerCase()}`}
+                            className="bg-black text-white py-2 rounded-lg text-lg hover:bg-gray-900 transition px-3"
                         >
                             Subscribe 🚀
                         </Link>
@@ -65,9 +65,9 @@ const Pricing = () => {
 const plans = [
     {
         id: 1,
-        name: "Kickoff Kit",
+        name: "Elite",
         price: "499",
-        description: "Start strong with our Kickstart Creator Kit, essential features & personalized assistance included.",
+        description: "Start strong with our Elite Creator Kit, essential features & personalized assistance included.",
         features: [
             "+ 2 Long-Forms",
             "+ 15 Reels",
@@ -75,15 +75,15 @@ const plans = [
             "+ Can Request Reels",
             "+ Frame.io for Reviewing",
             "+ Mail Assistance",
-            "+ Kickass Editing",
+            "+ Badass Editing",
             "+ AI Dynamo Kit",
         ],
     },
     {
         id: 2,
-        name: "Rise Up",
+        name: "Dominate",
         price: "999",
-        description: "Elevate your game with Rise Up, advanced features & multi-channel publishing.",
+        description: "Elevate your game with Dominate, advanced features & multi-channel publishing.",
         features: [
             "Everything in Kickoff Kit and...",
             "+ 4 long-forms",
@@ -92,11 +92,13 @@ const plans = [
             "+ Chat Assistance",
             "+ Publishing on 3 channels",
             "+ Title Ideas and Descriptions",
+            "+ 2 Months Required",
+            "+ Extra Chill Time"
         ],
     },
     {
         id: 3,
-        name: "Mastery Move",
+        name: "Mastery",
         price: "1,699",
         description: "Unleash mastery with Mastermind Mastery Move, all-inclusive features & promotional opportunities.",
         features: [

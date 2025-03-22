@@ -1,9 +1,9 @@
 "use client"
 import { useEffect, useState } from "react";
-import { CalendarIcon, Loader, Loader2, LoaderPinwheel, LockIcon } from "lucide-react";
+import { CalendarIcon, Loader2, LockIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import SignupPopup from "@/components/auth/signup";
 import LoginPopup from "@/components/auth/login";
 import { isFutureOrToday } from "@/utils/helper-functions";
@@ -24,11 +24,9 @@ export default function Checkout() {
     const pathName = usePathname()
     const split = pathName.split("/");
 
-    const planDetails = plans.filter((item) => String(item.id) === split[split.length - 1])
-    console.log(pathName, planDetails)
+    const planDetails = plans.filter((item) => String(item.name).toLowerCase() === split[split.length - 1].toLowerCase())
 
     const { data: session } = useSession();
-    console.log(session)
 
     const handleMail = async () => {
         try {
@@ -38,7 +36,8 @@ export default function Checkout() {
                 body: JSON.stringify({
                     email: session?.user?.email,
                     name: session?.user?.name,
-                    amount: "888", // or dynamic value
+                    amount: planDetails[0].price,
+                    planName: planDetails[0].name,
                 }),
             });
 
@@ -55,28 +54,53 @@ export default function Checkout() {
 
         setIsProcessing(true)
         try {
-            const response = await fetch("/api/create-order", { method: "POST" });
-            const data = await response.json();
+            const response = await fetch("/api/create-order", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    amount: planDetails[0].price
+                }),
+            });
+            const order = await response.json();
 
+            // console.log(order.orderId)
             const options = {
                 key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
                 amount: planDetails[0].price * 100,
-                Currency: "INR",
+                Currency: "USD",
                 name: session ? session?.user?.name : "",
-                description: "Test Transaction",
-                order_id: data.orderID,
+                description: "Premium Video Editing Plan",
+                order_id: order.orderId,
+
                 handler: async function (request: any) {
                     console.log("payment successfull", response);
-                    await handleMail();
-                    setIsProcessing(false)
+                    try {
+                        await handleMail();
+
+                        await fetch("/api/create-entry", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                                orderId: order.orderId,
+                                planName: planDetails[0].name,
+                                startsAt: startDate
+
+                            }),
+                        });
+                        setIsProcessing(false)
+                    } catch (error) {
+                        console.log("payment faile", error)
+                        alert("Something went wrong")
+                        setIsProcessing(false)
+                    }
                 },
+
                 prefill: {
                     name: session ? session?.user?.name : "",
                     email: session ? session?.user?.email : "",
-                    contact: "1234567890"
                 },
                 theme: {
-                    color: "#3399cc"
+                    color: "#ed1c31"
                 },
 
             }
@@ -96,6 +120,7 @@ export default function Checkout() {
 
     useEffect(() => {
         setIsFuture(isFutureOrToday(startDate));
+        console.log(startDate)
     }, [startDate]);
 
 
@@ -110,7 +135,7 @@ export default function Checkout() {
                 <Loader2 className="text-white animate-spin" />
             </div>}
 
-            <div className="bg-white/60 dark:bg-white/85 p-8 rounded-xl shadow-lg max-w-3xl w-full mt-28">
+            <div className="bg-white/60 dark:bg-white/85 p-8 rounded-xl shadow-lg max-w-3xl w-full mt-28 mb-20">
                 <h2 className="text-2xl text-black/60 font-bold mb-6">Checkout</h2>
                 {/* Sign Up Section */}
                 <div className="border-b pb-4 mb-4">
@@ -142,22 +167,9 @@ export default function Checkout() {
                 {popup === "signup" && <SignupPopup setPopup={setPopup} />}
                 {popup === "login" && <LoginPopup setPopup={setPopup} />}
 
-                {/* Payment Section */}
-                <div className="border-b pb-4 mb-4">
-                    <p className="text-lg font-medium text-black flex items-center gap-2">
-                        Payment
-                    </p>
-                    <button
-                        className="w-full mt-2 bg-gray-500 hover:bg-gray-800 text-white px-6 py-3 rounded-lg"
-                        onClick={handleBuyNow}
-                        disabled={session && session?.user?.name ? false : true}
-                    >
-                        Buy Now
-                    </button>
-                </div>
 
                 {/* Order Summary */}
-                <div className={`"border p-4 rounded-lg shadow-sm`}>
+                <div className={`"border pb-4 rounded-lg shadow-sm`}>
                     <h3 className="text-lg font-semibold">Order summary</h3>
 
                     {/* Start Date Picker */}
@@ -169,7 +181,7 @@ export default function Checkout() {
                             type="date"
                             value={startDate}
                             onChange={(e) => setStartDate(e.target.value)}
-                            className={`w-full border rounded-md p-2 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent" ${!isFuture ? "border-red-500" : "border-gray-300"}`}
+                            className={`w-full border rounded-md p-2 pl-10 bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent" ${!isFuture ? "border-red-500" : "border-gray-300"}`}
                             required
                         />
                         <CalendarIcon className="absolute left-3 top-3 text-gray-500 w-5 h-5" />
@@ -194,6 +206,20 @@ export default function Checkout() {
                     <p className="text-gray-500 text-sm">You will be charged monthly until canceled.</p>
                 </div>
 
+                {/* Payment Section */}
+                <div className="border-b pb-4 mb-4 mt-4">
+                    <p className="text-lg font-medium text-black flex items-center gap-2">
+                        Payment
+                    </p>
+                    <button
+                        className="w-full mt-2 bg-gray-500 hover:bg-gray-800 text-white px-6 py-3 rounded-lg"
+                        onClick={handleBuyNow}
+                        disabled={session && session?.user?.name ? false : true}
+                    >
+                        Buy Now
+                    </button>
+                </div>
+
                 {/* Secure Checkout Footer */}
                 <div className="mt-6 flex items-center gap-2 text-gray-600 text-sm">
                     <LockIcon className="w-4 h-4" />
@@ -207,17 +233,17 @@ export default function Checkout() {
 const plans = [
     {
         id: 1,
-        name: "Kickoff Kit",
-        price: 888.00,
+        name: "Elite",
+        price: 499,
     },
     {
         id: 2,
-        name: "Rise Up",
-        price: 1776.00,
+        name: "Dominate",
+        price: 999,
     },
     {
         id: 3,
-        name: "Mastery Move",
-        price: 2664.00,
+        name: "Mastery",
+        price: 1699,
     },
 ]

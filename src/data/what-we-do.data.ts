@@ -10,7 +10,7 @@ export const WEDO = [
         id: 2,
         icon: "🖼️",
         titleOne: "Thumbnail Magic",
-        titleTwo: "Click-Worthy Designs",
+        titleTwo: "Click-Worthy Design",
         body: "A great thumbnail isn’t just a picture—it’s a promise. Our Perfect Packaging system ensures eye-catching, high-converting visuals that stop the scroll."
     },
     {
@@ -18,27 +18,27 @@ export const WEDO = [
         icon: "💡",
         titleOne: "Ideas That Hook",
         titleTwo: "Keep Viewers Watching",
-        body: "Struggling with ideas? Let GrowCo handle it! From research to captivating storytelling, we turn concepts into binge-worthy content."
+        body: "Struggling with ideas? Let ClipCurve handle it! From research to captivating storytelling, we turn concepts into binge-worthy content."
     },
     {
         id: 4,
         icon: "🎬",
         titleOne: "Video Editing",
-        titleTwo: "Video Editing",
-        body: "Creating a stellar video demands over 40 hours of editing work. Our team of top-tier editors and animators has got you covered. Just hit record, and leave the rest to us."
+        titleTwo: "Animation",
+        body: "Editing a high-quality video takes 40+ hours—but you don’t have to do it! Our expert editors and animators handle everything. You hit record, we do the rest. 🎬✨"
     },
     {
         id: 5,
         icon: "🎬",
-        titleOne: "Hollywood-Level Editing",
-        titleTwo: "Animations",
-        body: "Editing a top-tier video takes 40+ hours—but you don’t have to do it! Our expert editors & animators bring your content to life, so you can focus on what you do best—creating."
+        titleOne: "Video Ideas",
+        titleTwo: "Trending Topics",
+        body: "We use your channel’s handle to craft unique video ideas and deliver weekly trending topics, making your recording sessions effortless and engaging."
     },
     {
         id: 6,
         icon: "🔥",
         titleOne: "Title Ideas",
-        titleTwo: "Click-Worthy Generators",
+        titleTwo: "Generators",
         body: "We craft high-converting, audience-magnet titles that drive views & engagement. No more guesswork—just viral potential."
     },
     {
@@ -51,8 +51,8 @@ export const WEDO = [
     {
         id: 8,
         icon: "🚀",
-        titleOne: "SEO-Optimized Descriptions ",
-        titleTwo: "Smart Tagging",
+        titleOne: "Smart Tagging",
+        titleTwo: "SEO-Optimization",
         body: "In seconds, we generate keyword-rich, high-ranking descriptions & tags to ensure your videos don’t just exist—they get discovered."
     },
 

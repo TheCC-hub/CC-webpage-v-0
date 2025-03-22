@@ -22,11 +22,11 @@ export default function WhatWeDo() {
                         </div>
 
                         <div className="text-[20px] font-semibold mb-6 items-center flex flex-col gap-0">
-                            <span className="whitespace-nowrap">{item.titleOne}</span>
+                            <span className="whitespace-nowrap">{item.titleOne} &</span>
                             {/* <span className="whitespace-nowrap text-xl">&</span> */}
-                            <span className="whitespace-nowrap">+ {item.titleTwo}</span>
+                            <span className="whitespace-nowrap"> {item.titleTwo}</span>
                         </div>
-                        <p className="mt-2 text-[15px]">{item.body}</p>
+                        <p className="mt-2 text-[15px] text-justify">{item.body}</p>
                     </div>
                 ))}
 
@@ -46,11 +46,11 @@ export default function WhatWeDo() {
                             </div>
 
                             <div className="text-[20px] font-semibold mb-6 items-center flex flex-col gap-0">
-                                <span className="whitespace-nowrap">{item.titleOne}</span>
+                                <span className="whitespace-nowrap">{item.titleOne} &</span>
                                 {/* <span className="whitespace-nowrap text-xl">&</span> */}
-                                <span className="whitespace-nowrap">+ {item.titleTwo}</span>
+                                <span className="whitespace-nowrap">{item.titleTwo}</span>
                             </div>
-                            <p className="mt-2 text-[15px]">{item.body}</p>
+                            <p className="mt-2 text-[15px] text-justify">{item.body}</p>
                         </div>
                     ))}
                 </div>

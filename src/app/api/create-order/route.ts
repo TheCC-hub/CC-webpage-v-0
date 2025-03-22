@@ -7,11 +7,12 @@ const razorpay = new Razorpay({
 });
 
 export async function POST(req: NextRequest) {
+    const data = await req.json()
     try {
         const order = await razorpay.orders.create({
-            amount: 100 * 100, // amount in paise
-            currency: "INR",
-            receipt: "receipt_" + Math.random().toString(36).substring(7),
+            amount: data.amount * 100, // amount in cents
+            currency: "USD",
+            receipt: "receipt_" + Date.now(),
         });
         return NextResponse.json({ orderId: order.id }, { status: 200 })
     } catch (error) {

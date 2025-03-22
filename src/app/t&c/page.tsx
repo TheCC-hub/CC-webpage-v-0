@@ -24,13 +24,13 @@ const TermsAndConditions = () => {
                     <h2 className="text-xl font-semibold mb-2">Service Plans</h2>
                     <ul className="list-disc pl-6">
                         <li>
-                            <strong>Kickoff Kit:</strong> Up to fifteen reels and two long-form videos per month, basic reels with attractive elements.
+                            <strong>Elite :</strong> Up to fifteen reels and two long-form videos per month, basic reels with attractive elements.
                         </li>
                         <li>
-                            <strong>Rise Up:</strong> 5 additional reels, 2 more long-forms, and thumbnails with these videos.
+                            <strong>Dominate :</strong> 5 additional reels, 2 more long-forms, and thumbnails with these videos.
                         </li>
                         <li>
-                            <strong>Mastery Move:</strong> Assigns one dedicated editor/animator and one content strategist, working on two requests concurrently.
+                            <strong>Mastery :</strong> Assigns one dedicated editor/animator and one content strategist, working on two requests concurrently.
                         </li>
                     </ul>
                     <p>All plans are customizable as per the creator’s needs.</p>

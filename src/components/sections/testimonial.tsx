@@ -22,14 +22,14 @@ export default function Testimonial() {
                                 alt="RaDona Ludlow"
                                 className="w-24 h-24 object-cover rounded-full border-2 border-black"
                             />
-                            <span className="absolute bottom-[-5px] left-1/2 transform -translate-x-1/2 bg-white text-xs border border-black px-2 py-1 rounded-full">
+                            <a href="#" className="absolute bottom-[-5px] left-1/2 transform -translate-x-1/2 bg-white text-black text-xs border border-black px-2 py-1 rounded-full">
                                 click
-                            </span>
+                            </a>
                         </div>
 
                         <div>
-                            <p className="font-bold text-lg">RaDona Ludlow</p>
-                            <p className="italic text-gray-600">Boys and Girls Hairstyle</p>
+                            <p className="font-bold text-lg text-black">Channel Owner</p>
+                            <p className="italic text-gray-600">X and Y</p>
                             <p className="text-gray-700 font-medium">196K Subscribers</p>
                         </div>
                     </div>

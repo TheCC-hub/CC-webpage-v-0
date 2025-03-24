@@ -12,7 +12,7 @@ const Pricing = () => {
                 <Background />
             </div>
             {/* Pricing Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-20 max-w-6xl mt-28">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-6xl mt-28">
                 {/* Pricing Plans */}
                 {plans.map((plan, index) => (
                     <div
@@ -40,7 +40,7 @@ const Pricing = () => {
 
                         {/* Button */}
                         <Link
-                            href={`/price/${plan.name.toLowerCase()}`}
+                            href={`/price/${plan.name.toLowerCase().split(" ")[0]}`}
                             className="bg-black text-white py-2 rounded-lg text-lg hover:bg-gray-900 transition px-3"
                         >
                             Subscribe 🚀
@@ -65,13 +65,14 @@ const Pricing = () => {
 const plans = [
     {
         id: 1,
-        name: "Elite",
-        price: "499",
-        description: "Start strong with our Elite Creator Kit, essential features & personalized assistance included.",
+        name: "Base Plan",
+        price: "149",
+        description: "Start strong with our Base Plan Kit, essential features & assistance included.",
         features: [
             "+ 2 Long-Forms",
-            "+ 15 Reels",
-            "+ Clip Selection",
+            "+ 10 Reels",
+            "+ Thumbnails",
+            "+ 3 day turnaround",
             "+ Can Request Reels",
             "+ Frame.io for Reviewing",
             "+ Mail Assistance",
@@ -81,35 +82,48 @@ const plans = [
     },
     {
         id: 2,
-        name: "Dominate",
-        price: "999",
-        description: "Elevate your game with Dominate, advanced features & multi-channel publishing.",
+        name: "Growth Starter",
+        price: "349",
+        description: "Elevate your game with Growth Starter, advanced features & multi-channel publishing.",
         features: [
-            "Everything in Kickoff Kit and...",
-            "+ 4 long-forms",
+            "+ 4 Long-Forms",
             "+ 20 Reels",
-            "+ Thumbnails",
+            "Everything in Base Plan and...",
+            "+ 2 day turnaround",
             "+ Chat Assistance",
-            "+ Publishing on 3 channels",
-            "+ Title Ideas and Descriptions",
-            "+ 2 Months Required",
-            "+ Extra Chill Time"
+            // "+ 2 Months Required",
         ],
     },
     {
         id: 3,
-        name: "Mastery",
-        price: "1,699",
-        description: "Unleash mastery with Mastermind Mastery Move, all-inclusive features & promotional opportunities.",
+        name: "Content Pro",
+        price: "799",
+        description: "Unleash Pro with Mastermind Mastery Move, all-inclusive features & promotional opportunities.",
         features: [
-            "Everything in Rise Up Plan and...",
-            "+ Video Ideas",
-            "+ Video Scripts",
+            "+ 6 Long-Forms",
+            "+ 30 Reels",
+            "Everything in Growth Starter and...",
+            // "+ Video Ideas",
+            "+ 3 Video's Script (upto 15 min)",
             "+ 1 Dedicated Editor",
-            "+ 1 Content Strategist",
-            "+ 5 Channel Publishing",
-            "+ 3 Months Required",
-            "+ Priority Assistance",
+            "+ 2 Channel Publishing",
+            "+ Analytics (monthly report)",
+            "+ SEO (Title, Tags, Description)"
+        ],
+        highlight: "Scale Up Quick!",
+    },
+    {
+        id: 4,
+        name: "Elite",
+        price: "1499",
+        description: "Unlock excellence with Mastermind Mastery Move—featuring all-inclusive perks and exclusive promotional opportunities!",
+        features: [
+            "+ 8 Long-Forms",
+            "+ 40 Reels",
+            "+ Analytics (weekly report, growth insights)",
+            "+ 3 Channel Publishing",
+            "+ 6 Video's Script (upto 20 min)",
+            "Everything in Content Pro and...",
         ],
         highlight: "Scale Up Quick!",
     },

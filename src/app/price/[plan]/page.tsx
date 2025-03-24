@@ -233,17 +233,22 @@ export default function Checkout() {
 const plans = [
     {
         id: 1,
-        name: "Elite",
-        price: 499,
+        name: "Base",
+        price: 149,
     },
     {
         id: 2,
-        name: "Dominate",
-        price: 999,
+        name: "Growth",
+        price: 349,
     },
     {
         id: 3,
-        name: "Mastery",
-        price: 1699,
+        name: "Content",
+        price: 799,
+    },
+    {
+        id: 4,
+        name: "Elite",
+        price: 1499,
     },
 ]

@@ -56,10 +56,12 @@ export default function Home() {
         </div>
 
         {/* Hero Image */}
-        <div className="w-[60%] relative hidden lg:flex">
-          <Image src={windoeScreen} className="inset-0 w-full object-cover" alt="background" width={1000} height={1000} />
+        <div className="w-[60%] relative hidden lg:flex items-center justify-center">
+          <div className="w-full">
+            <Image src={windoeScreen} className="w-full object-cover" alt="background" width={1000} height={1000} />
+          </div>
 
-          <div className="absolute top-10 left-5 w-[623px] h-[397px] overflow-hidden rounded-sm">
+          <div className="absolute top-[34px] left-[15px] w-[95.5%] h-[86%] overflow-hidden rounded-b-md">
             <Image src={heroImage} className=" inset-0 w-full h-full object-cover" alt="hero-image" width={1000} height={1000} />
           </div>
         </div>

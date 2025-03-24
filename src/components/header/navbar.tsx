@@ -44,7 +44,7 @@ export default function Navbar() {
                 <ThemeButton />
             </span>
 
-            <nav className="flex justify-between items-center py-4 border-b-[0.1px] border-black dark:border-white border-text shadow-md w-full top-0 left-0 px-20">
+            <nav className="flex justify-between items-center py-4 border-b-[0.1px] border-black dark:border-white border-text shadow-md w-full top-0 left-0 px-20 backdrop-blur-sm">
                 <div className='flex items-center gap-10'>
 
                     <Link href={"/"} className='flex items-center'>

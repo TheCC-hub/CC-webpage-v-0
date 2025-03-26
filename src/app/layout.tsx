@@ -5,6 +5,7 @@ import Navbar from "@/components/header/navbar";
 import Footer from "@/components/header/footer";
 import SessionProvider from "./SessionProvider";
 import { ThemeProvider } from "@/components/ThemeButton";
+import ChatBox from "@/components/chatBox";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,9 +44,7 @@ export default function RootLayout({
             <Navbar />
 
             {/* Floating Chat Button */}
-            <div className="fixed bottom-5 z-50 right-5 bg-black text-white px-4 py-2 rounded-full shadow-lg cursor-pointer hover:bg-gray-800 transition">
-              feedback!
-            </div>
+            <ChatBox />
 
             {children}
             <Footer />

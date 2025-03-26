@@ -9,6 +9,14 @@ const nextConfig: NextConfig = {
   //     redirect_uri: "http://localhost:3000/api/auth/callback/google",
   //   },
   // },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

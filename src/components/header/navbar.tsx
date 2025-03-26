@@ -6,27 +6,29 @@ import Link from 'next/link'
 import { redirect, usePathname } from 'next/navigation'
 import ThemeButton from '../ThemeButton'
 import { signIn, signOut, useSession } from 'next-auth/react'
+import { FaRegUser } from 'react-icons/fa6'
 
 export default function Navbar() {
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     const { data: session } = useSession()
-
     const pathName = usePathname();
 
+
+    // hide and show navbar 
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
 
             if (currentScrollY === 0) {
-                setIsVisible(true); // Always show navbar when at the top
+                setIsVisible(true);
             } else if (currentScrollY > lastScrollY) {
-                setIsVisible(false); // Hide navbar when scrolling down
+                setIsVisible(false);
             } else {
-                setIsVisible(true); // Show navbar when scrolling up
+                setIsVisible(true);
             }
-
             setLastScrollY(currentScrollY);
         };
 
@@ -69,6 +71,9 @@ export default function Navbar() {
                         <li className={`${pathName === "/faq" ? "text-primary" : ""} cursor-pointer hover:text-accent`}>
                             <Link href={"/faq"}>FAQs</Link>
                         </li>
+                        <li className={`${pathName === "/about" ? "text-primary" : ""} cursor-pointer hover:text-accent`}>
+                            <Link href={"/about"}>About us</Link>
+                        </li>
                     </ul>
                 </div>
 
@@ -79,8 +84,27 @@ export default function Navbar() {
                     Dashboard
                 </Link> */}
                 {session && session?.user?.email ? (
-                    <div>
+                    <div className='flex items-center justify-center gap-3 relative'>
                         <span className="text-lg font-semibold">Hi, {session?.user?.name?.split(" ")[0]}</span>
+
+                        <div
+                            onClick={() => setIsPopupOpen(!isPopupOpen)}
+                            className='w-10 h-10 rounded-full overflow-hidden cursor-pointer hover:border-2 border-primary'
+                        >
+                            {session?.user?.image ?
+                                <Image src={session?.user?.image} alt='icon' width={500} height={500} /> :
+                                <FaRegUser />
+                            }
+                        </div>
+                        {isPopupOpen &&
+                            <div className='absolute -bottom-12 -right-5 bg-white p-2 rounded'>
+                                <button
+                                    onClick={() => signOut()}
+                                    className='bg-gray-200 px-2 py-1'
+                                >
+                                    Logout
+                                </button>
+                            </div>}
                     </div>
                 ) :
                     <button

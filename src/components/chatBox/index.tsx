@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import Chat from './chat';
 import { IoMdClose } from 'react-icons/io';
+import { BsChat } from 'react-icons/bs';
 
 export default function ChatBox() {
     const [isOpen, setIsOpen] = useState(false);
@@ -13,8 +14,8 @@ export default function ChatBox() {
                     <div onClick={() => setIsOpen(!isOpen)} className='absolute top-3 cursor-pointer right-4 z-50 text-xl text-white'><IoMdClose /></div>
                     <Chat />
                 </div> :
-                <div onClick={() => setIsOpen(!isOpen)} className=" bg-black text-white px-4 py-2 rounded-full shadow-lg cursor-pointer hover:bg-gray-800 transition">
-                    Chat with us
+                <div onClick={() => setIsOpen(!isOpen)} className="flex items-center justify-center gap-2 bg-black text-white p-4 rounded-full shadow-lg cursor-pointer hover:bg-gray-800 transition">
+                    <BsChat />
                 </div>
             }
         </div>

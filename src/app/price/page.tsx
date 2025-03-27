@@ -70,7 +70,7 @@ const plans = [
         description: "Start strong with our Base Plan Kit, essential features & assistance included.",
         features: [
             "+ 2 Long-Forms",
-            "+ 10 Reels",
+            "+ 5 Reels",
             "+ Thumbnails",
             "+ 3 day turnaround",
             "+ Can Request Reels",
@@ -87,7 +87,7 @@ const plans = [
         description: "Elevate your game with Growth Starter, advanced features & multi-channel publishing.",
         features: [
             "+ 4 Long-Forms",
-            "+ 20 Reels",
+            "+ 15 Reels",
             "Everything in Base Plan and...",
             "+ 2 day turnaround",
             "+ Chat Assistance",
@@ -101,7 +101,7 @@ const plans = [
         description: "Unleash Pro with Mastermind Mastery Move, all-inclusive features & promotional opportunities.",
         features: [
             "+ 6 Long-Forms",
-            "+ 30 Reels",
+            "+ 25 Reels",
             "Everything in Growth Starter and...",
             // "+ Video Ideas",
             "+ 3 Video's Script (upto 15 min)",
@@ -119,7 +119,7 @@ const plans = [
         description: "Unlock excellence with Mastermind Mastery Move—featuring all-inclusive perks and exclusive promotional opportunities!",
         features: [
             "+ 8 Long-Forms",
-            "+ 40 Reels",
+            "+ 35 Reels",
             "+ Analytics (weekly report, growth insights)",
             "+ 3 Channel Publishing",
             "+ 6 Video's Script (upto 20 min)",

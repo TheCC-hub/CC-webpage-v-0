@@ -42,23 +42,20 @@ export default function Navbar() {
             className={`flex items-center justify-center w-full fixed z-50 transition-transform duration-500 ease-in-out
          ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
         >
-            <span className="absolute top-5 right-5 z-50">
+            <span className="absolute top-4 right-5 z-50">
                 <ThemeButton />
             </span>
 
-            <nav className="flex justify-between items-center py-4 border-b-[0.1px] border-black dark:border-white border-text shadow-md w-full top-0 left-0 px-20 backdrop-blur-sm">
-                <div className='flex items-center gap-10'>
+            <nav className="flex justify-between items-center py-3 border-b-[0.1px] border-black dark:border-white border-text shadow-md w-full top-0 left-0 px-20 backdrop-blur-sm">
+                <div className='flex items-center justify-center gap-x-8'>
 
-                    <Link href={"/"} className='flex items-center'>
-                        <div className='flex items-center justify-start gap-2'>
-                            <div className='h-[45px] flex items-center '>
-                                <Image src={logo} alt='' className="h-full w-fit bg-cover object-center" width={100} height={100} />
-                            </div>
-                            {/* <h1 className='text-2xl font-extrabold text-primary'>ClipCurve</h1> */}
+                    <Link href={"/"}>
+                        <div className='w-[55px] flex items-center '>
+                            <Image src={logo} alt='' className="h-full w-full bg-cover object-center" width={1000} height={1000} />
                         </div>
                     </Link>
 
-                    <ul className="flex space-x-8 text-xl">
+                    <ul className="flex space-x-8 text-xl items-center">
                         <li className={`${pathName === "/" ? "text-primary" : ""} cursor-pointer hover:text-accent`}>
                             <Link href={"/"}>CC</Link>
                         </li>

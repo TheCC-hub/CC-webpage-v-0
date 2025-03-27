@@ -50,7 +50,7 @@ export default function Home() {
               target="_blank"
               className="border font-bold border-black dark:border-white dark:text-white px-4 py-2 shadow-xl rounded-md dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white transition text-black"
             >
-              Enquire Now!
+              Schedule meet
             </Link>
           </div>
         </div>

@@ -24,17 +24,20 @@ export default function Home() {
         </div>
 
         {/* Hero Section */}
-        <div className="flex flex-col items-start justify-center gap-6 px-10 text-left">
-          <p className="mt-4 text-lg font-semibold ">
+        <div className="flex flex-col items-start justify-center px-10 text-left">
+          <p className="text-lg font-semibold mb-6">
             AI-powered, cost-efficient, and creatively crafted solutions.
           </p>
-          <h2 className="text-[38px] font-extrabold leading-snug">
-            Boost Your <span className="text-primary uppercase">YouTube</span> Growth,
+          <h2 className="text-[32px] font-extrabold leading-snug py-4">
+            {/* Blow up your YouTube & cut team costs like a boss—more growth, less spend, no stress! 🚀🔥” */}
+            Blow up your <span className="text-primary uppercase">YouTube</span>
             <br />
-            & Slash <span className="text-[#5f57fa] uppercase ">Team</span> Costs!
+            & cut <span className="text-[#5f57fa] uppercase ">team costs</span> like a boss
           </h2>
 
-          <p className="mt-2 text-sm font-light">
+          <p>more growth, less spend, no stress!</p>
+
+          <p className="mt-10 mb-6 text-sm font-light">
             Creators and entrepreneurs aiming for YouTube success trust us—the ultimate strategy and production team.
           </p>
 
@@ -73,7 +76,7 @@ export default function Home() {
       </div>
 
       {/* what do we do  */}
-      <section className="relative w-full py-40 ">
+      <section className="relative w-full py-40 what-we-do">
         <div className="absolute top-0 left-0 w-full h-full -z-10">
           <Background />
         </div>

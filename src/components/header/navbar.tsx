@@ -62,14 +62,17 @@ export default function Navbar() {
                         <li className={`${pathName === "/case-studies" ? "text-primary" : ""} cursor-pointer hover:text-accent`}>
                             <Link href={"/case-studies"}>Case Studies</Link>
                         </li>
-                        <li className={`${pathName === "/testimonials" ? "text-primary" : ""} cursor-pointer hover:text-accent`}>
+                        <li className={`${pathName === "/price" ? "text-primary" : ""} cursor-pointer hover:text-accent`}>
+                            <Link href={"/price"}>Pricing</Link>
+                        </li>
+                        {/* <li className={`${pathName === "/testimonials" ? "text-primary" : ""} cursor-pointer hover:text-accent`}>
                             <Link href={"/#testimonials"} >Testimonials</Link>
+                        </li> */}
+                        <li className={`${pathName === "/about" ? "text-primary" : ""} cursor-pointer hover:text-accent`}>
+                            <Link href={"/about"}>About us</Link>
                         </li>
                         <li className={`${pathName === "/faq" ? "text-primary" : ""} cursor-pointer hover:text-accent`}>
                             <Link href={"/faq"}>FAQs</Link>
-                        </li>
-                        <li className={`${pathName === "/about" ? "text-primary" : ""} cursor-pointer hover:text-accent`}>
-                            <Link href={"/about"}>About us</Link>
                         </li>
                     </ul>
                 </div>

@@ -28,14 +28,17 @@ export default function Home() {
           <p className="text-lg font-semibold mb-6">
             AI-powered, cost-efficient, and creatively crafted solutions.
           </p>
-          <h2 className="text-[32px] font-extrabold leading-snug py-4">
-            {/* Blow up your YouTube & cut team costs like a boss—more growth, less spend, no stress! 🚀🔥” */}
-            Blow up your <span className="text-primary uppercase">YouTube</span>
-            <br />
-            & cut <span className="text-[#5f57fa] uppercase ">team costs</span> like a boss
-          </h2>
 
-          <p>more growth, less spend, no stress!</p>
+          <div className="py-4">
+            <h2 className="text-[32px] font-extrabold leading-snug ">
+              {/* Blow up your YouTube & cut team costs like a boss—more growth, less spend, no stress! 🚀🔥” */}
+              Blow up your <span className="text-primary uppercase">YouTube</span>
+              <br />
+              & cut <span className="text-[#5f57fa] uppercase ">team costs</span> like a boss
+            </h2>
+
+            <p>more growth, less spend, no stress!</p>
+          </div>
 
           <p className="mt-10 mb-6 text-sm font-light">
             Creators and entrepreneurs aiming for YouTube success trust us—the ultimate strategy and production team.

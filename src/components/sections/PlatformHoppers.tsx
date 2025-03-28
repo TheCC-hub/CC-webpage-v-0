@@ -1,6 +1,6 @@
 import React from "react";
 import { IoLogoYoutube } from "react-icons/io5";
-import { FaEye } from "react-icons/fa6";
+import { FaEye, FaMicrophone } from "react-icons/fa6";
 import { BsCameraReelsFill } from "react-icons/bs";
 import { AiFillInstagram, AiFillTikTok } from "react-icons/ai";
 import { SiYoutubeshorts } from "react-icons/si";
@@ -56,7 +56,7 @@ export default function PlatformHoppers() {
 
                     <div className="flex gap-2 items-center">
                         <div className="w-[170px] h-[300px]  shadow-lg rounded-[40px] p-6 flex flex-col justify-center items-center border-4 border-green-500 text-green-500 backdrop-blur-md">
-                            <BsCameraReelsFill className="h-20 w-20 mb-2" />
+                            <FaMicrophone className="h-20 w-20 mb-2" />
                             <p className="font-light text-xl">Podcast Shorts</p>
                         </div>
 

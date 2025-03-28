@@ -42,7 +42,7 @@ export default function Navbar() {
             className={`flex items-center justify-center w-full fixed z-50 transition-transform duration-500 ease-in-out
          ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
         >
-            <span className="absolute top-4 right-5 z-50">
+            <span className="absolute top-3 right-5 z-50">
                 <ThemeButton />
             </span>
 
@@ -55,7 +55,7 @@ export default function Navbar() {
                         </div>
                     </Link>
 
-                    <ul className="flex space-x-8 text-xl items-center">
+                    <ul className="flex space-x-8 text-lg items-center">
                         <li className={`${pathName === "/" ? "text-primary" : ""} cursor-pointer hover:text-accent`}>
                             <Link href={"/"}>CC</Link>
                         </li>

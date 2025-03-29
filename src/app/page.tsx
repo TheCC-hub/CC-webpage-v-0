@@ -1,7 +1,6 @@
 "use client"
 
 import PlatformHoppers from "@/components/sections/PlatformHoppers";
-import WhatWeDo from "@/components/sections/we-do";
 import HeroSection from "@/components/sections/hero-section";
 import Testimonial from "@/components/sections/testimonial";
 import Link from "next/link";
@@ -11,6 +10,7 @@ import Image from "next/image";
 import Background from "@/components/boubble-background";
 import windoeScreen from "@/assets/bg/window-screen.png"
 import heroImage from "@/assets/bg/hero-image.jpg"
+import WhatWeDo from "@/components/whatWeDo";
 
 export default function Home() {
   return (
@@ -30,7 +30,7 @@ export default function Home() {
           </p>
 
           <div className="py-4">
-            <h2 className="text-[32px] font-extrabold leading-snug ">
+            <h2 className="text-[40px] font-extrabold leading-snug ">
               {/* Blow up your YouTube & cut team costs like a boss—more growth, less spend, no stress! 🚀🔥” */}
               Blow up your <span className="text-primary uppercase">YouTube</span>
               <br />
@@ -62,12 +62,12 @@ export default function Home() {
         </div>
 
         {/* Hero Image */}
-        <div className="w-[60%] relative hidden lg:flex items-center justify-center">
+        <div className="w-[45%] relative hidden lg:flex items-center justify-center">
           <div className="w-full">
             <Image src={windoeScreen} className="w-full object-cover" alt="background" width={1000} height={1000} />
           </div>
 
-          <div className="absolute top-[34px] left-[15px] w-[95.5%] h-[86%] overflow-hidden rounded-b-md">
+          <div className="absolute top-[30px] left-[12.5px] w-[95.6%] h-[85.8%] overflow-hidden rounded-b-md">
             <Image src={heroImage} className=" inset-0 w-full h-full object-cover" alt="hero-image" width={1000} height={1000} />
           </div>
         </div>
@@ -84,6 +84,7 @@ export default function Home() {
           <Background />
         </div>
 
+        {/* <WhatWeDo /> */}
         <WhatWeDo />
       </section>
 

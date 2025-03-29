@@ -59,6 +59,9 @@ export default function Navbar() {
                         <li className={`${pathName === "/" ? "text-primary" : ""} cursor-pointer hover:text-accent`}>
                             <Link href={"/"}>CC</Link>
                         </li>
+                        <li className={`${pathName === "/#services" ? "text-primary" : ""} cursor-pointer hover:text-accent`}>
+                            <Link href={"/#services"}>Services</Link>
+                        </li>
                         <li className={`${pathName === "/case-studies" ? "text-primary" : ""} cursor-pointer hover:text-accent`}>
                             <Link href={"/case-studies"}>Case Studies</Link>
                         </li>

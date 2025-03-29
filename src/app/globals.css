@@ -7,6 +7,7 @@
 
   font-optical-sizing: auto;
   font-style: normal;
+  scroll-behavior: smooth;
 }
 :root {
   --background: #ffffff;

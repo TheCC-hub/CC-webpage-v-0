@@ -84,7 +84,7 @@ export default function Chat() {
                         type="text"
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
-                        className="outline-none p-1 w-full bg-transparent"
+                        className="outline-none p-1 w-full bg-transparent text-wrap overflow-x-auto"
                         placeholder="Welcome to CC. How can we help you?"
                         onKeyDown={handleKeyPress}
                     />

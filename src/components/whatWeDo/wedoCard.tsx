@@ -42,9 +42,9 @@ export default function WedoCard({ service }: { service: any }) {
 
                     </div>}
                 {service?.samples?.images &&
-                    <div className='flex flex-wrap gap-x-20 gap-y-8 items-center justify-center'>
+                    <div className='flex flex-wrap gap-x-8 gap-y-8 items-center justify-center'>
                         {service?.samples?.images.map((url: string, idx: number) => (
-                            <div className={`relative  w-[350px] overflow-hidden rounded-xl items-center flex justify-center`} key={idx}>
+                            <div className={`relative  w-[300px] overflow-hidden rounded-xl items-center flex justify-center`} key={idx}>
                                 <Image src={url} alt='' className='w-full' width={1000} height={1000}></Image>
                             </div>
                         ))}

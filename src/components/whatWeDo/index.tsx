@@ -11,6 +11,7 @@ import t2 from "@/assets/thumbnails/t2.jpg"
 import t3 from "@/assets/thumbnails/t3.jpg"
 import t4 from "@/assets/thumbnails/t4.jpg"
 import t5 from "@/assets/thumbnails/t5.jpg"
+import t6 from "@/assets/thumbnails/t6.jpg"
 
 export default function WhatWeDo() {
 
@@ -83,11 +84,11 @@ const Services = [
         ],
         samples: {
             aspactRatio: {
-                height: "400",
-                width: "250"
+                height: "200",
+                width: "150"
             },
             images: [
-                t1, t2, t3, t4, t5
+                t1, t2, t3, t4, t5, t6
             ]
         }
     },

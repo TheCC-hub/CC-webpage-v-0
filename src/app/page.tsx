@@ -12,8 +12,16 @@ import windoeScreen from "@/assets/bg/window-screen.png"
 import heroImage from "@/assets/bg/hero-image.jpg"
 import WhatWeDo from "@/components/whatWeDo";
 import PricingSection from "@/components/prices";
+import { useEffect } from "react";
 
 export default function Home() {
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
   return (
     <div className=" text-black dark:text-white relative h-fit w-full">
 
@@ -63,7 +71,7 @@ export default function Home() {
         </div>
 
         {/* Hero Image */}
-        <div className="w-[45%] relative hidden lg:flex items-center justify-center">
+        {/* <div className="w-[45%] relative hidden lg:flex items-center justify-center">
           <div className="w-full">
             <Image src={windoeScreen} className="w-full object-cover" alt="background" width={1000} height={1000} />
           </div>
@@ -71,6 +79,13 @@ export default function Home() {
           <div className="absolute top-[30px] left-[12.5px] w-[95.6%] h-[85.8%] overflow-hidden rounded-b-md">
             <Image src={heroImage} className=" inset-0 w-full h-full object-cover" alt="hero-image" width={1000} height={1000} />
           </div>
+        </div> */}
+        <div className="w-[500px] h-[600px] rounded-xl overflow-hidden relative mt-20">
+          <div
+            className="calendly-inline-widget w-[500px] h-[600px] rounded-xl overflow-hidden"
+            data-url="https://calendly.com/clip-curve"
+            style={{ minWidth: "320px", height: "600px" }}
+          ></div>
         </div>
 
       </div>

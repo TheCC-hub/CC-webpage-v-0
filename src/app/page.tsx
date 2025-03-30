@@ -11,6 +11,7 @@ import Background from "@/components/boubble-background";
 import windoeScreen from "@/assets/bg/window-screen.png"
 import heroImage from "@/assets/bg/hero-image.jpg"
 import WhatWeDo from "@/components/whatWeDo";
+import PricingSection from "@/components/prices";
 
 export default function Home() {
   return (
@@ -79,7 +80,7 @@ export default function Home() {
       </div>
 
       {/* what do we do  */}
-      <section className="relative w-full py-40 what-we-do">
+      <section className="relative w-full py-40 what-we-do px-20">
         <div className="absolute top-0 left-0 w-full h-full -z-10">
           <Background />
         </div>
@@ -88,7 +89,9 @@ export default function Home() {
         <WhatWeDo />
       </section>
 
-      {/* <HowItWorks /> */}
+      <section className="py-20 px-20">
+        <PricingSection />
+      </section>
 
       <PlatformHoppers />
       <Testimonial />

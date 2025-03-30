@@ -65,8 +65,8 @@ export default function Navbar() {
                         <li className={`${pathName === "/case-studies" ? "text-primary" : ""} cursor-pointer hover:text-accent`}>
                             <Link href={"/case-studies"}>Case Studies</Link>
                         </li>
-                        <li className={`${pathName === "/price" ? "text-primary" : ""} cursor-pointer hover:text-accent`}>
-                            <Link href={"/price"}>Pricing</Link>
+                        <li className={`${pathName === "/#pricing" ? "text-primary" : ""} cursor-pointer hover:text-accent`}>
+                            <Link href={"/#pricing"}>Pricing</Link>
                         </li>
                         {/* <li className={`${pathName === "/testimonials" ? "text-primary" : ""} cursor-pointer hover:text-accent`}>
                             <Link href={"/#testimonials"} >Testimonials</Link>

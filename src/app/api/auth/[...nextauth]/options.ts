@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import NextAuth, { AuthOptions } from "next-auth";
+import { AuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
 export const authOptions: AuthOptions = {
@@ -34,7 +34,12 @@ export const authOptions: AuthOptions = {
 
             return true;
         },
-        async jwt({ token, user }) {
+        async jwt({ token, user, account }) {
+            // if (account) {
+            if (account) {
+                token.accessToken = account.access_token; // Save access token
+            }
+            // }
             if (user) {
                 token.email = user.email;
                 token.name = user.name;
@@ -48,6 +53,7 @@ export const authOptions: AuthOptions = {
                 session.user.name = token.name;
                 session.user.image = token.picture;
             }
+            session.accessToken = token.accessToken as string | undefined;
             return session;
         },
     },

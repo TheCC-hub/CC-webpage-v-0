@@ -42,10 +42,8 @@ export default function RootLayout({
 
           <SessionProvider>
             <Navbar />
-
             {/* Floating Chat Button */}
             <ChatBox />
-
             {children}
             <Footer />
           </SessionProvider>

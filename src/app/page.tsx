@@ -55,7 +55,7 @@ export default function Home() {
 
           <div className="mt-6 space-x-4">
             <Link
-              href={"/price"}
+              href={"/#pricing"}
               className="border font-bold border-black dark:border-white px-4 py-2 shadow-xl rounded-md hover:bg-white dark:hover:bg-black bg-black dark:bg-white hover:text-black dark:hover:text-white transition text-white dark:text-black"
             >
               Pricing
@@ -82,7 +82,7 @@ export default function Home() {
         </div> */}
         <div className="w-[500px] h-[600px] rounded-xl overflow-hidden relative mt-20">
           <div
-            className="calendly-inline-widget w-[500px] h-[600px] rounded-xl overflow-hidden"
+            className="calendly-inline-widget w-[500px] h-[600px] rounded-xl overflow-hidden "
             data-url="https://calendly.com/clip-curve"
             style={{ minWidth: "320px", height: "600px" }}
           ></div>

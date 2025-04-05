@@ -47,10 +47,10 @@ export default function Footer() {
                             <hr className="w-40 h-[0.1px] bg-white mt-1" />
                         </div> */}
 
-                        <Link href={"/privacy-policy"} className="mt-4 text-sm md:mt-0">Privacy Policy</Link>
-                        <Link href={"/t&c"} className="mt-4 text-sm md:mt-0">Terms and Conditions</Link>
-                        <Link href={"/dssPolicy"} className="mt-4 text-sm md:mt-0">Digital Services Shipping Policy</Link>
-                        <Link href={"/carPolicy"} className="mt-4 text-sm md:mt-0">Cancellation and Refund Policy</Link>
+                        <Link href={"/terms&conditions/privacy-policy"} className="mt-4 text-sm md:mt-0">Privacy Policy</Link>
+                        <Link href={"/terms&conditions"} className="mt-4 text-sm md:mt-0">Terms and Conditions</Link>
+                        <Link href={"/terms&conditions/dssPolicy"} className="mt-4 text-sm md:mt-0">Digital Services Shipping Policy</Link>
+                        <Link href={"/terms&conditions/carPolicy"} className="mt-4 text-sm md:mt-0">Cancellation and Refund Policy</Link>
                         <p className="text-sm">Email: <a href="mailto:theclipcurve@gmail.com" className="underline">theclipcurve@gmail.com</a></p>
                         <div className="flex items-center justify-end gap-4">
 

@@ -8,51 +8,108 @@ datasource db {
 }
 
 model User {
-  id            String    @id @default(uuid())
-  name          String?
-  email         String?   @unique
-  emailVerified DateTime?
-  image         String?
-  accounts      Account[]
-  sessions      Session[]
-
-  ActivePlan ActivePlan[]
+  id              String            @id @default(uuid())
+  name            String?
+  email           String?           @unique
+  emailVerified   DateTime?
+  image           String?
+  // accounts        Account[]
+  // sessions        Session[]
+  // ActivePlan      ActivePlan[]
+  YoutubeChannels YoutubeChannels[]
+  orders          Order[]
 }
 
-model ActivePlan {
-  id        String   @id @default(uuid())
-  userId    String
-  orderId   String
-  planName  String
-  isActive  Boolean
-  isExpired Boolean  @default(false)
-  startsAt  DateTime
-  expiresAt DateTime
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+// model ActivePlan {
+//   id        String   @id @default(uuid())
+//   userId    String
+//   orderId   String
+//   planName  String
+//   isActive  Boolean
+//   isExpired Boolean  @default(false)
+//   startsAt  DateTime
+//   expiresAt DateTime
+//   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+// }
+
+// model Account {
+//   id                String  @id @default(uuid())
+//   userId            String
+//   type              String
+//   provider          String
+//   providerAccountId String
+//   refresh_token     String?
+//   access_token      String?
+//   expires_at        Int?
+//   token_type        String?
+//   scope             String?
+//   id_token          String?
+//   session_state     String?
+//   user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+//   @@unique([provider, providerAccountId]) // Ensures correct unique constraint
+// }
+
+// model Session {
+//   id           String   @id @default(uuid())
+//   sessionToken String   @unique
+//   userId       String
+//   expires      DateTime
+//   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+// }
+
+model YoutubeChannels {
+  id          String @id @default(uuid())
+  userId      String
+  channelName String
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-model Account {
-  id                String  @id @default(uuid())
-  userId            String
-  type              String
-  provider          String
-  providerAccountId String
-  refresh_token     String?
-  access_token      String?
-  expires_at        Int?
-  token_type        String?
-  scope             String?
-  id_token          String?
-  session_state     String?
-  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+model Order {
+  id               String   @id
+  clientMail       String
+  formStage        Int      @default(0)
+  user             User     @relation(fields: [clientMail], references: [email], onDelete: Cascade)
+  orderType        String?
+  rawFootageSize   String?
+  rawFootageLength String?
+  addOns           AddOns[]
+  videTitle        String?
+  videoCategory    String?
+  publishDate      String?
+  finalLength      String?
 
-  @@unique([provider, providerAccountId]) // Ensures correct unique constraint
+  funny         Boolean @default(false)
+  serious       Boolean @default(false)
+  professional  Boolean @default(false)
+  elegant       Boolean @default(false)
+  casual        Boolean @default(false)
+  informational Boolean @default(false)
+  entertaining  Boolean @default(false)
+
+  videoPace           String?
+  instructionByClient String?
+  exampleVideos       String?
+  scriptLink          String?
+  rawFootageUrl       String?
+
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+  status    String   @default("pending")
+  // paymentId String?
+  // paymentStatus String? @default("pending")
+  // paymentMethod String?
+  // paymentAmount  Float?
+  // paymentCurrency String?
+  // paymentDate     DateTime?
+  // paymentIntentId String?
+  // paymentReceiptUrl String?
 }
 
-model Session {
-  id           String   @id @default(uuid())
-  sessionToken String   @unique
-  userId       String
-  expires      DateTime
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+model AddOns {
+  id      String @id
+  orderId String
+  title   String
+  number  Int    @default(0)
+  order   Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
 }

@@ -65,9 +65,6 @@ export default function Navbar() {
                         <li className={`${pathName === "/case-studies" ? "text-primary" : ""} cursor-pointer hover:text-accent`}>
                             <Link href={"/case-studies"}>Case Studies</Link>
                         </li>
-                        <li className={`${pathName === "/#pricing" ? "text-primary" : ""} cursor-pointer hover:text-accent`}>
-                            <Link href={"/#pricing"}>Pricing</Link>
-                        </li>
                         {/* <li className={`${pathName === "/testimonials" ? "text-primary" : ""} cursor-pointer hover:text-accent`}>
                             <Link href={"/#testimonials"} >Testimonials</Link>
                         </li> */}
@@ -86,37 +83,46 @@ export default function Navbar() {
                 >
                     Dashboard
                 </Link> */}
-                {session && session?.user?.email ? (
-                    <div className='flex items-center justify-center gap-3 relative'>
-                        <span className="text-lg font-semibold">Hi, {session?.user?.name?.split(" ")[0]}</span>
-
-                        <div
-                            onClick={() => setIsPopupOpen(!isPopupOpen)}
-                            className='w-10 h-10 rounded-full overflow-hidden cursor-pointer hover:border-2 border-primary'
-                        >
-                            {session?.user?.image ?
-                                <Image src={session?.user?.image} alt='icon' width={500} height={500} /> :
-                                <FaRegUser />
-                            }
-                        </div>
-                        {isPopupOpen &&
-                            <div className='absolute -bottom-12 -right-5 bg-white p-2 rounded'>
-                                <button
-                                    onClick={() => signOut()}
-                                    className='bg-gray-200 px-2 py-1'
-                                >
-                                    Logout
-                                </button>
-                            </div>}
-                    </div>
-                ) :
-                    <button
-                        onClick={() => signIn("google")}
-                        className="border-2 font-bold text-xl border-black dark:border-white px-4 py-1 shadow-xl rounded-lg hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition text-black dark:text-white"
+                <div className='flex items-center justify-center gap-x-5'>
+                    <Link
+                        href={"/order_form"}
+                        className="border-2 font-bold text-xl border-primary dark:border-white px-4 py-1 shadow-xl rounded-lg bg-primary hover:bg-white dark:hover:bg-white hover:text-primary dark:hover:text-black transform ease-in-out duration-300 text-white dark:text-white"
                     >
-                        Login
-                    </button>
-                }
+                        Get Start
+                    </Link>
+                    {session && session?.user?.email ? (
+                        <div className='flex items-center justify-center gap-3 relative'>
+                            <span className="text-lg font-semibold">Hi, {session?.user?.name?.split(" ")[0]}</span>
+
+                            <div
+                                onClick={() => setIsPopupOpen(!isPopupOpen)}
+                                className='w-10 h-10 rounded-full overflow-hidden cursor-pointer hover:border-2 border-primary'
+                            >
+                                {session?.user?.image ?
+                                    <Image src={session?.user?.image} alt='icon' width={500} height={500} /> :
+                                    <FaRegUser />
+                                }
+                            </div>
+                            {isPopupOpen &&
+                                <div className='absolute -bottom-12 -right-5 bg-white p-2 rounded'>
+                                    <button
+                                        onClick={() => signOut()}
+                                        className='bg-gray-200 px-2 py-1'
+                                    >
+                                        Logout
+                                    </button>
+                                </div>}
+                        </div>
+                    ) :
+                        <button
+                            onClick={() => signIn("google")}
+                            className="border-2 font-bold text-xl border-black dark:border-white px-4 py-1 shadow-xl rounded-lg hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition text-black dark:text-white"
+                        >
+                            Login
+                        </button>
+                    }
+                </div>
+
 
 
             </nav>

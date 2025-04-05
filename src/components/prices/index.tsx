@@ -40,24 +40,27 @@ export const Tabs = [
         packages: [
             {
                 name: "Explore Package",
-                description: "1 horizontal video with no discount",
+                description: "1 horizontal video with ~14% discount",
                 price: "89",
+                discountedPrice: "69",
                 per: "video",
                 endDelevery: " 1 horizontal video",
 
             },
             {
                 name: "Explore Package",
-                description: "4 horizontal video with no discount",
+                description: "4 horizontal video with ~34% discount",
                 price: "79",
+                discountedPrice: "59",
                 per: "video",
                 endDelevery: " 4 horizontal video",
 
             },
             {
                 name: "Explore Package",
-                description: "8 horizontal video with no discount",
+                description: "8 horizontal video with ~39% discount",
                 price: "69",
+                discountedPrice: "55",
                 per: "video",
                 endDelevery: " 8 horizontal video",
 
@@ -73,26 +76,29 @@ export const Tabs = [
         packages: [
             {
                 name: "Explore Package",
-                description: "1 vertical video with no discount",
+                description: "1 vertical video with ~34% discount",
+                price: "30",
+                discountedPrice: "20",
+                per: "video",
+                endDelevery: "1 vertical video",
+
+            },
+            {
+                name: "Explore Package",
+                description: "10 vertical video with ~46% discount",
+                price: "24",
+                discountedPrice: "16",
+                per: "video",
+                endDelevery: "10 vertical video",
+
+            },
+            {
+                name: "Explore Package",
+                description: "20 vertical video with 50% discount",
                 price: "20",
+                discountedPrice: "15",
                 per: "video",
-                endDelevery: " 1 vertical video",
-
-            },
-            {
-                name: "Explore Package",
-                description: "5 vertical video with no discount",
-                price: "18",
-                per: "video",
-                endDelevery: " 5 vertical video",
-
-            },
-            {
-                name: "Explore Package",
-                description: "10 vertical video with no discount",
-                price: "16",
-                per: "video",
-                endDelevery: " 10 vertical video",
+                endDelevery: "20 vertical video",
 
             },
         ]
@@ -107,25 +113,28 @@ export const Tabs = [
             {
                 name: "Quarterly",
                 description: "3 month subscription",
-                price: "970",
+                price: "699",
+                discountedPrice: "499",
                 per: "month",
                 endDelevery: "3 month subscription",
 
             },
             {
                 name: "Semi-Annual",
-                description: "save 10% with a 6 month subscription",
-                price: "970",
+                description: "save 25% with a 6 month subscription",
+                price: "599",
+                discountedPrice: "449",
                 per: "month",
-                endDelevery: "3 month subscription",
+                endDelevery: "6 month subscription",
 
             },
             {
                 name: "Annual",
-                description: "save 20% with a 12 month subscription",
-                price: "970",
+                description: "save 33% with a 12 month subscription",
+                price: "499",
+                discountedPrice: "399",
                 per: "month",
-                endDelevery: "3 month subscription",
+                endDelevery: "12 month subscription",
 
             },
         ]
@@ -141,6 +150,7 @@ export const Tabs = [
                 name: "Every Platform",
                 description: "done-for-you social media management",
                 price: "5000",
+                discountedPrice: "1999",
                 per: "month",
                 endDelevery: "done-for-you social media management​",
 

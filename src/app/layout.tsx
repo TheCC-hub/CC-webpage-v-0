@@ -6,6 +6,7 @@ import Footer from "@/components/header/footer";
 import SessionProvider from "./SessionProvider";
 import { ThemeProvider } from "@/components/ThemeButton";
 import ChatBox from "@/components/chatBox";
+import { Suspense } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,16 +39,18 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased text-black dark:text-white relative bg-white dark:bg-black`}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-[#F9F7FE] dark:from-[#1E1B29] via-[#F2E9FC] dark:via-[#2C2A3F] to-[#E8F2FE] dark:to-[#3A3750] -z-50 "></div>
-        <ThemeProvider>
+        <Suspense fallback={<div>Loading...</div>}>
+          <ThemeProvider>
+            <SessionProvider>
+              <Navbar />
+              {/* Floating Chat Button */}
+              <ChatBox />
+              {children}
+              <Footer />
+            </SessionProvider>
+          </ThemeProvider>
+        </Suspense>
 
-          <SessionProvider>
-            <Navbar />
-            {/* Floating Chat Button */}
-            <ChatBox />
-            {children}
-            <Footer />
-          </SessionProvider>
-        </ThemeProvider>
 
       </body>
     </html>

@@ -11,6 +11,7 @@
   "dependencies": {
     "@auth/prisma-adapter": "^2.8.0",
     "@prisma/client": "^6.5.0",
+    "bcrypt": "^5.1.1",
     "firebase": "^11.5.0",
     "framer-motion": "^12.5.0",
     "lodash.isequal": "^4.5.0",
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@types/bcrypt": "^5.0.2",
     "@types/lodash.isequal": "^4.5.8",
     "@types/node": "^20",
     "@types/nodemailer": "^6.4.17",

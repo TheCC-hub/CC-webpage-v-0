@@ -18,21 +18,19 @@ export default function WhatWeDo() {
     return (
         <div className='w-full flex flex-col items-center' id='services'>
             <h1 className='text-center text-4xl font-bold mb-10'>What we do</h1>
-            <div className='flex flex-col w-full items-center gap-8'>
 
+            <div className='flex flex-col w-full items-center gap-20'>
                 {Services.map((service, idx) => (
-                    <WedoCard service={service} key={idx} />
+                    <WedoCard service={service} key={idx} index={idx} />
                 ))}
                 {/* <WedoCard service={Services[1]} /> */}
-
-
             </div>
         </div>
     )
 }
 
 
-const Services = [
+export const Services = [
     {
         icon: hVideoIcon,
         name: "Horizontal Video",
@@ -85,7 +83,7 @@ const Services = [
         samples: {
             aspactRatio: {
                 height: "200",
-                width: "150"
+                width: "300"
             },
             images: [
                 t1, t2, t3, t4, t5, t6

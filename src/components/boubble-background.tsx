@@ -38,7 +38,7 @@ const FloatingImage = ({ src, className }: { src: any; className: string }) => {
             }}
             className={`absolute ${className}`}
         >
-            <Image src={src} alt="Background Element" width={500} height={500} className="w-full h-full" />
+            <Image src={src} alt="Background Element" width={200} height={200} className="w-full h-full" />
         </motion.div>
     );
 };

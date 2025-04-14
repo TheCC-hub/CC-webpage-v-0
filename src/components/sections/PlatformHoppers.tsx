@@ -14,12 +14,8 @@ export default function PlatformHoppers() {
 
     return (
         <section className="relative py-16 px-6 text-center">
-            <div className="absolute top-0 left-0 w-full h-full -z-10">
-                <Background />
-            </div>
             <h2 className="text-4xl font-extrabold text-seconday mb-8">
                 Our videos leap across platforms, <br />racking up views everywhere they land! 🚀
-
             </h2>
 
             {/* Container for Cards */}

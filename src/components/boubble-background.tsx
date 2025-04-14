@@ -18,7 +18,7 @@ export default function Background() {
             <FloatingImage src={bg3} className="bottom-[5%] left-[20%] w-[200px] h-[200px]" />
             <FloatingImage src={bg4} className="bottom-[10%] right-[25%] w-[350px] h-[350px]" />
             <FloatingImage src={bg5} className="top-[50%] left-[40%] w-[180px] h-[180px]" />
-            <FloatingImage src={bg6} className="top-[30%] right-[35%] w-[280px] h-[280px]" />
+            <FloatingImage src={bg6} className="top-[10%] right-[35%] w-[280px] h-[280px]" />
         </div>
     );
 }

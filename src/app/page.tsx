@@ -20,7 +20,9 @@ export default function Home() {
   }, []);
   return (
     <div className=" text-black dark:text-white relative h-fit w-full">
-
+      <div className="fixed top-0 left-0 w-full h-screen -z-10">
+        <Background />
+      </div>
       <LandingPage />
 
       <AboutUs />
@@ -31,9 +33,9 @@ export default function Home() {
 
       {/* what do we do  */}
       <section className="relative w-full py-40 what-we-do px-20">
-        <div className="absolute top-0 left-0 w-full h-full -z-10">
+        {/* <div className="absolute top-0 left-0 w-full h-full -z-10">
           <Background />
-        </div>
+        </div> */}
 
         <WhatWeDo />
       </section>

@@ -48,7 +48,7 @@ export const Tabs = [
 
             },
             {
-                name: "Explore Package",
+                name: "Trending Package",
                 description: "4 horizontal video with ~34% discount",
                 price: "79",
                 discountedPrice: "59",
@@ -57,12 +57,12 @@ export const Tabs = [
 
             },
             {
-                name: "Explore Package",
-                description: "8 horizontal video with ~39% discount",
+                name: "Viral Package",
+                description: "10 horizontal video with ~39% discount",
                 price: "69",
-                discountedPrice: "55",
+                discountedPrice: "49",
                 per: "video",
-                endDelevery: " 8 horizontal video",
+                endDelevery: " 10 horizontal video",
 
             },
         ]
@@ -84,7 +84,7 @@ export const Tabs = [
 
             },
             {
-                name: "Explore Package",
+                name: "Trending Package",
                 description: "10 vertical video with ~46% discount",
                 price: "24",
                 discountedPrice: "16",
@@ -93,7 +93,7 @@ export const Tabs = [
 
             },
             {
-                name: "Explore Package",
+                name: "Viral Package",
                 description: "20 vertical video with 50% discount",
                 price: "20",
                 discountedPrice: "15",

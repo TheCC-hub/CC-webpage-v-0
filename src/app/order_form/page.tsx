@@ -64,7 +64,7 @@ export default function OrderForm() {
                         </div>
 
                         <div className='w-full flex items-center justify-center mx-10 mt-10'>
-                            <ProgressBar steps={steps} currentStep={currentStep} />
+                            <ProgressBar steps={Steps} currentStep={currentStep} />
                         </div>
 
                         <div className='w-full flex items-end justify-center mt-10'>
@@ -104,7 +104,7 @@ export default function OrderForm() {
 
     )
 }
-const steps = [
+const Steps = [
     "Start Your Order",
     "Order Type",
     "Video Footage",

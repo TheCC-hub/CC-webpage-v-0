@@ -38,7 +38,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased text-black dark:text-white relative bg-white dark:bg-black`}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-[#F9F7FE] dark:from-[#1E1B29] via-[#F2E9FC] dark:via-[#2C2A3F] to-[#E8F2FE] dark:to-[#3A3750] -z-50 "></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#eef2ff] via-[#d6e0ff] to-[#cce7ff] dark:from-[#121212] dark:via-[#1E1E2F] dark:to-[#2A2A40] -z-50 "></div>
         <Suspense fallback={<div>Loading...</div>}>
           <ThemeProvider>
             <SessionProvider>

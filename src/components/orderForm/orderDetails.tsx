@@ -32,13 +32,13 @@ const VideoDetailsForm = ({ setFormData, formData, setCurrentStep }: { setFormDa
 
             {/* Example Videos */}
             <div className="mt-4">
-                <label className="block text-gray-700 font-medium mb-2">Example Videos</label>
+                <label className="block text-gray-700 font-medium mb-2">Example Videos (multiple links separated by commas)</label>
                 <input
                     type="text"
                     name="example_videos"
                     value={formData.order_details.example_videos}
                     onChange={handleChange}
-                    placeholder="Leave example video links for us to draw inspiration from."
+                    placeholder="Leave example video links for us to draw inspiration from.(multiple links separated by commas)"
                     className="w-full border p-3 rounded-lg bg-gray-100 placeholder-gray-400"
                 />
             </div>

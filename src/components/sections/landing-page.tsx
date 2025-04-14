@@ -72,14 +72,14 @@ export default function LandingPage() {
                 >
                     <Link
                         href={"/#pricing"}
-                        className="border font-bold border-black dark:border-white px-4 py-2 shadow-xl rounded-md hover:bg-white dark:hover:bg-black bg-black dark:bg-white hover:text-black dark:hover:text-white transition text-white dark:text-black"
+                        className="border font-bold border-black dark:border-white px-4 py-2 shadow-xl rounded-md hover:bg-white dark:hover:bg-black bg-black dark:bg-white hover:text-black dark:hover:text-white transition duration-300 ease-in-out text-white dark:text-black"
                     >
                         Pricing
                     </Link>
                     <Link
                         href={"https://calendly.com/clip-curve"}
                         target="_blank"
-                        className="border font-bold border-black dark:border-white dark:text-white px-4 py-2 shadow-xl rounded-md dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white transition text-black"
+                        className="border font-bold border-black dark:border-white dark:text-white px-4 py-2 shadow-xl rounded-md dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white transition duration-300 ease-in-out text-black"
                     >
                         Schedule meet
                     </Link>

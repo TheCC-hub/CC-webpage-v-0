@@ -27,7 +27,7 @@ export default function WedoCard({ service, index }: any) {
                     : {}
             }
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="relative bg-white/20 dark:bg-black/20 p-6 shadow-lg border-2 border-primary rounded-xl w-full max-w-5xl"
+            className="relative bg-white/20 dark:bg-black/20 p-6 shadow-lg border-2 border-primary rounded-xl w-full max-w-5xl backdrop-blur-sm"
         >
             <div className="flex items-center gap-4">
                 <img src={service.icon.src} alt={service.name} className="w-12 h-12" />
@@ -35,7 +35,7 @@ export default function WedoCard({ service, index }: any) {
             </div>
             <ul className="mt-4 space-y-2 text-left">
                 {service.description.map((line: string, i: number) => (
-                    <li key={i}>• {line}</li>
+                    <li key={i} className="text-xl">• {line}</li>
                 ))}
             </ul>
 

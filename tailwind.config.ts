@@ -13,8 +13,8 @@ export default {
         slowspin: "spin 60s linear infinite", // Custom speed
       },
       colors: {
-        background: "#EBE9E1", // Off-white background
-        primary: "#E43D12", // 🔥 Ultra-vibrant fiery red
+        background: "#05061a", // Off-white background
+        primary: "#f3472f", // 🔥 Ultra-vibrant fiery red
         fill: "#D6536D", // Soft, muted pink (for a gentle look)
         secondary: "#FFA2B6", // Soft, glowing pink (for a glossy look)
         accent: "#EFB11D", // Bright, glowing yellow (for attention)

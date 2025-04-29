@@ -1,6 +1,5 @@
 
 import logo from "@/assets/logo/logo1.png"
-import { label } from "framer-motion/client";
 import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedin, FaSquareXTwitter } from "react-icons/fa6";

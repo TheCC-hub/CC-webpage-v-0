@@ -5,8 +5,8 @@ export default function PackageCard({ item, bgRed }: any) {
 
 
     return (
-        <div className='min-w-[400px] text-black dark:text-white bg-white/40 dark:bg-black/20 rounded-3xl overflow-hidden border-2 border-primary backdrop-blur-sm'>
-            <div className={`w-full  py-5 ${bgRed ? "bg-primary text-white" : "bg-secondary text-white"}`}>
+        <div className='min-w-[360px] w-[32%] relative text-gray-200 rounded-3xl overflow-hidden border-2 border-primary backdrop-blur-sm'>
+            <div className={`w-full  py-5 border-b-[0.1px] border-primary  ${bgRed ? "bg-primary text-white" : "bg-gray-700 text-white"}`}>
                 <h1 className='text-3xl font-semibold '>{item.name}</h1>
                 <p>{item.description}</p>
             </div>
@@ -24,7 +24,9 @@ export default function PackageCard({ item, bgRed }: any) {
 
                 <div>✅ {item.endDelevery}</div>
 
-                <Link href={"/order_form"} className='px-8 py-2 mx-auto text-xl font-bold bg-white/90 text-primary border-2 border-primary rounded-xl hover:bg-primary hover:text-white transform duration-300 ease-in-out'>
+                <Link href={"/order_form"}
+                    className='px-5 py-2 mx-auto text-lg font-bold bg-gray-600 border-2 hover:border-primary border-white rounded-xl hover:bg-primary transform duration-300 ease-in-out'
+                >
                     Get Start
                 </Link>
             </div>

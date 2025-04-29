@@ -12,7 +12,7 @@ export default function PackageSection({ tabData }: any) {
                 ))}
             </div>
 
-            <div className='mt-10 flex items-center justify-center gap-5 flex-wrap'>
+            <div className='mt-10 flex items-center justify-evenly gap-4 flex-wrap relative w-full'>
                 {tabData?.packages?.map((item: any, idx: number) => {
 
 

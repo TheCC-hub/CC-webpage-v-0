@@ -1,14 +1,17 @@
 "use client"
 
-import PlatformHoppers from "@/components/sections/PlatformHoppers";
-import HeroSection from "@/components/sections/hero-section";
-import Testimonial from "@/components/sections/testimonial";
-import Background from "@/components/boubble-background";
-import WhatWeDo from "@/components/sections/whatWeDo";
+import PlatformHoppers from "@/components/platformHoppers";
+import HeroSection from "@/components/heroSection";
+import Testimonial from "@/components/testimonial";
 import PricingSection from "@/components/prices";
 import { useEffect } from "react";
-import LandingPage from "@/components/sections/landing-page";
-import AboutUs from "@/components/sections/about-section";
+import LandingPage from "@/components/landing-page";
+import AboutUs from "@/components/about-section";
+import { LucideIcon, Pickaxe, AudioLines, RefreshCcw, PaintBucket, Rss, Images, GalleryHorizontal, Film } from 'lucide-react';
+import HowWeWork from "@/components/howWeWork";
+import { GlowingButton } from "@/components/button";
+import PackageGrid from "@/components/packageGrid";
+import WhatWeDo from "@/components/whatWeDo";
 
 export default function Home() {
 
@@ -19,37 +22,34 @@ export default function Home() {
     document.body.appendChild(script);
   }, []);
   return (
-    <div className=" text-black dark:text-white relative h-fit w-full">
-      <div className="fixed top-0 left-0 w-full h-screen -z-10">
-        <Background />
-      </div>
-      <LandingPage />
-
-      <AboutUs />
-
-      {/* <div className="relative">
-        <VideoCarousel />
-      </div> */}
-
-      {/* what do we do  */}
-      <section className="relative w-full py-40 what-we-do px-20">
-        {/* <div className="absolute top-0 left-0 w-full h-full -z-10">
-          <Background />
-        </div> */}
-
+    <div className="relative h-fit w-full">
+      <section className="px-28">
+        <LandingPage />
+      </section>
+      <section className="px-28">
+        <AboutUs />
+      </section>
+      <section className="px-28">
         <WhatWeDo />
       </section>
-
-      <section className="py-20 px-20">
+      <section className="px-28">
+        <HowWeWork />
+      </section>
+      <section className="px-28">
         <PricingSection />
       </section>
+      <section className="px-28">
+        <PackageGrid />
+      </section>
+      <section className="px-28">
+        <PlatformHoppers />
+      </section>
 
-      <PlatformHoppers />
       <Testimonial />
+
       <HeroSection />
     </div >
   );
 }
-
 
 

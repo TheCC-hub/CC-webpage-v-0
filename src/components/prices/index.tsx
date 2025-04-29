@@ -2,31 +2,65 @@
 import React, { useEffect, useState } from 'react'
 import PriceMenu from './priceMenu'
 import PackageSection from './packageSection'
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 export default function PricingSection() {
-    const [activeTab, setActiveTab] = useState(Tabs[0].label)
-    const [activeTabData, setActiveTabData] = useState(Tabs[0])
+    const [activeTab, setActiveTab] = useState(Tabs[0].label);
+    const [activeTabData, setActiveTabData] = useState(Tabs[0]);
+
+    const controls = useAnimation();
+    const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
 
     useEffect(() => {
-        const setdata = () => {
-            setActiveTabData(Tabs.filter((tab) => tab.label === activeTab)[0])
-        }
-        setdata()
-    }, [activeTab])
+        const setData = () => {
+            const selected = Tabs.find((tab) => tab.label === activeTab);
+            if (selected) setActiveTabData(selected);
+        };
+        setData();
+    }, [activeTab]);
+
+    useEffect(() => {
+        if (inView) controls.start('visible');
+    }, [inView, controls]);
+
+    const fadeUp = {
+        hidden: { opacity: 0, y: 60 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
+    };
 
     return (
-        <div className='w-full text-center' id='pricing'>
-            <h1 className='text-4xl font-semibold'>Pricing</h1>
+        <div ref={ref} className="w-full text-center py-20" id="pricing">
+            <motion.h1
+                initial="hidden"
+                animate={controls}
+                variants={fadeUp}
+                className="text-4xl font-semibold"
+            >
+                Pricing
+            </motion.h1>
 
-            <div className='flex items-center justify-center gap-5 mt-10'>
+            <motion.div
+                initial="hidden"
+                animate={controls}
+                variants={fadeUp}
+                transition={{ delay: 0.2 }}
+                className="flex items-center justify-center gap-5 mt-10"
+            >
                 <PriceMenu tabs={Tabs} setActiveTab={setActiveTab} activeTab={activeTab} />
-            </div>
+            </motion.div>
 
-            <div className='mt-10'>
+            <motion.div
+                initial="hidden"
+                animate={controls}
+                variants={fadeUp}
+                transition={{ delay: 0.4 }}
+                className="mt-10"
+            >
                 <PackageSection tabData={activeTabData} />
-            </div>
+            </motion.div>
         </div>
-    )
+    );
 }
 
 

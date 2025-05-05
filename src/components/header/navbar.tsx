@@ -7,17 +7,16 @@ import { GlowingButton } from '../button'
 
 export default function Navbar() {
     return (
-        <nav className="flex justify-between items-center py-8 w-full px-28">
-            <div className='flex items-center justify-center gap-x-8'>
+        <nav className="flex justify-end items-center py-8 w-full px-28 relative">
 
-                <Link href={"/"} className='flex items-center justify-center gap-2'>
-                    <div className='w-[50px] flex items-center '>
-                        <Image src={logo} alt='' className="h-full w-full bg-cover object-center" width={100} height={100} />
-                    </div>
-                    <h1 className='text-2xl font-semibold hover:text-primary'>ClipCurve</h1>
-                </Link>
 
-            </div>
+            <Link href={"/"} className='flex items-center justify-center gap-2 absolute left-[108px]'>
+                <div className='w-[50px] flex items-center hover:w-[70px] transform ease-out duration-300 '>
+                    <Image src={logo} alt='' className="h-full w-full bg-cover object-center" width={100} height={100} />
+                </div>
+                <h1 className='text-2xl hover:text-3xl transform ease-out duration-300 font-semibold hover:text-primary'>ClipCurve</h1>
+            </Link>
+
 
             <div className="flex space-x-8 items-center">
                 <Link href={"/#services"} className='transform duration-300 ease-in-out hover:text-lg hover:text-primary'>What we Do</Link>

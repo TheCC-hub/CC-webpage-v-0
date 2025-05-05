@@ -1,17 +1,13 @@
-import Background from "@/components/boubble-background";
+
 import React from "react";
 
 const ShippingPolicy = () => {
     return (
         <div className="w-full§ flex items-start justify-center relative">
-
-            <div className="absolute top-0 left-0 w-full h-full -z-10">
-                <Background />
-            </div>
             <div className="container w-full p-8 max-w-3xl py-36 relative">
-                <h1 className="text-3xl font-bold mb-4">Digital Services Shipping Policy</h1>
-                <p className="text-gray-600">ClipCurve - Shipping Policy</p>
-                <p className="text-gray-500">Last Updated - 01/01/2025</p>
+                <h1 className="text-3xl font-bold mb-4 text-primary">Digital Services Shipping Policy</h1>
+                <p className="text-gray-300">ClipCurve - Shipping Policy</p>
+                <p className="text-gray-0">Last Updated - 01/01/2025</p>
 
                 <p className="mt-4">
                     ClipCurve provides digital services only and does not deal with physical products.

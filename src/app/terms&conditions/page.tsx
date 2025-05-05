@@ -1,16 +1,12 @@
-import Background from "@/components/boubble-background";
+
 import React from "react";
 
 const TermsAndConditions = () => {
     return (
         <div className="w-full§ flex items-start justify-center relative">
-
-            <div className="absolute top-0 left-0 w-full h-full -z-10">
-                <Background />
-            </div>
             <div className="container mx-auto max-w-3xl px-6 py-36">
-                <h1 className="text-3xl font-bold text-center mb-6">Terms and Conditions</h1>
-                <p className="text-gray-700 mb-4">Last Updated - 01/01/2025</p>
+                <h1 className="text-3xl font-bold text-center mb-6 text-primary">Terms and Conditions</h1>
+                <p className="text-gray-300 mb-4">Last Updated - 01/01/2025</p>
 
                 <section className="mb-8">
                     <h2 className="text-xl font-semibold mb-2">Agreement Overview</h2>

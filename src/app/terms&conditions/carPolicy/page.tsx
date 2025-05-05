@@ -1,18 +1,14 @@
-import Background from "@/components/boubble-background";
+
 import React from "react";
 
 const CancellationRefundPolicy = () => {
     return (
 
         <div className="w-full§ flex items-start justify-center relative">
-
-            <div className="absolute top-0 left-0 w-full h-full -z-10">
-                <Background />
-            </div>
             <div className="container w-full p-8 max-w-3xl py-36 relative">
-                <h1 className="text-3xl font-bold text-center mb-4">Cancellation and Refund Policy</h1>
-                <p className="text-center text-sm text-gray-600">ClipCurve - Cancellation and Refund Policy</p>
-                <p className="text-center text-sm text-gray-600 mb-6">Last Updated - 01/01/2025</p>
+                <h1 className="text-3xl font-bold text-center mb-4 text-primary">Cancellation and Refund Policy</h1>
+                <p className="text-center text-sm text-gray-200">ClipCurve - Cancellation and Refund Policy</p>
+                <p className="text-center text-sm text-gray-200 mb-6">Last Updated - 01/01/2025</p>
 
                 <section className="mb-6">
                     <h2 className="text-xl font-semibold">Cancellation Policy</h2>

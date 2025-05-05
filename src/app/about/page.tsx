@@ -1,13 +1,9 @@
-import Background from '@/components/boubble-background'
+
 import React from 'react'
 
 export default function AboutPage() {
     return (
         <div className="w-full§ flex items-start justify-center relative">
-
-            <div className="absolute top-0 left-0 w-full h-full -z-10">
-                <Background />
-            </div>
             <div className='container w-full p-8 max-w-3xl py-36 relative'>
                 <section className="mt-8">
                     <h1 className="text-4xl font-bold">About ClipCurve</h1>

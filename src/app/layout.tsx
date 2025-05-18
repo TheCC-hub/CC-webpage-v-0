@@ -16,7 +16,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Clip Curve",
+  title: "ClipCurve",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   description: "Skyrocket Your YOUTUBE Growth, with our AI-powered video editing service.",
 };
 

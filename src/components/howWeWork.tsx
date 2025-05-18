@@ -64,7 +64,7 @@ export default function HowWeWork() {
 
     return (
         <section className="py-20" ref={ref}>
-            <div className="mx-auto px-6 text-center max-w-5xl">
+            <div className="mx-auto px-6 text-center">
 
                 {/* Animated Heading */}
                 <motion.h2

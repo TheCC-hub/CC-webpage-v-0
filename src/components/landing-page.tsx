@@ -24,7 +24,7 @@ export default function LandingPage() {
     };
 
     return (
-        <div className="text-center items-center justify-start flex relative my-32" ref={ref}>
+        <div className="text-center items-center justify-start flex relative mt-32 mb-24" ref={ref}>
 
             {/* Hero Section */}
             <motion.div
@@ -68,6 +68,11 @@ export default function LandingPage() {
                         Mail us at: <span className='text-white hover:text-primary'>theclipcurve@gmail.com</span>
                     </motion.a>
                 </motion.div>
+
+                <div className='flex my-4 text-center w-full itemsd-center justify-center'>
+                    ✨ <h2 className="text-xl  text-primary shining-text">Enjoy Your First Vertical Video On Us</h2> ✨
+                </div>
+
             </motion.div>
         </div>
     );

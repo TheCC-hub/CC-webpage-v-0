@@ -31,6 +31,13 @@ export default function WhatWeDo() {
         hidden: { opacity: 0, y: 40 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
     };
+
+    function scrollToElementById(id: string) {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
     return (
         <section className="relative w-full py-20 what-we-do" ref={ref}>
             <motion.div
@@ -47,7 +54,7 @@ export default function WhatWeDo() {
                     <h1 className="text-4xl text-gray-200 font-bold mb-10">
                         Where big ideas become unstoppable products.
                     </h1>
-                    <GlowingButton title="Pricing" />
+                    <GlowingButton title="Pricing" onClick={() => scrollToElementById("pricing")} />
                 </motion.div>
 
                 <motion.div

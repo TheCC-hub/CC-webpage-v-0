@@ -1,7 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-*{
+
+* {
   /* font-family: "Proza Libre", serif; */
   font-family: "Poppins", sans-serif;
 
@@ -9,6 +10,7 @@
   font-style: normal;
   scroll-behavior: smooth;
 }
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -35,6 +37,36 @@ body {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.shining-text {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg,
+      #ed1c31 0%,
+      #fff 50%,
+      #ed1c31 100%);
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shine-text 2s linear infinite;
+}
+
+@keyframes shine-text {
+  0% {
+    background-position: 200% center;
+  }
+
+  50% {
+    background-position: 100% center;
+  }
+
+  100% {
+    background-position: -200% center;
+  }
 }

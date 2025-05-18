@@ -4,6 +4,7 @@ import logo from "@/assets/logo/logo1.png"
 import Image from 'next/image'
 import Link from 'next/link'
 import { GlowingButton } from '../button'
+import { redirect } from 'next/navigation'
 
 export default function Navbar() {
     return (
@@ -29,7 +30,11 @@ export default function Navbar() {
                 >
                     Order Video
                 </Link> */}
-                <GlowingButton title="Order Video" />
+                <GlowingButton title="Order Video" onClick={() => {
+                    if (typeof window !== 'undefined') {
+                        window.open("https://dashboard.clipcurve.com", '_blank', 'noopener,noreferrer');
+                    }
+                }} />
             </div>
         </nav>
 

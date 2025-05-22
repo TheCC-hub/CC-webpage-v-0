@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { GlowingButton } from '../button'
 import { redirect } from 'next/navigation'
+import { scrollToElementById } from '@/utils/utils'
 
 export default function Navbar() {
     return (
@@ -20,9 +21,9 @@ export default function Navbar() {
 
 
             <div className="flex space-x-8 items-center">
-                <Link href={"/#services"} className='transform duration-300 ease-in-out hover:text-lg hover:text-primary'>What we Do</Link>
-                <Link href={"/case-studies"} className='transform duration-300 ease-in-out hover:text-lg hover:text-primary'>Prices</Link>
-                <Link href={"/about"} className='transform duration-300 ease-in-out hover:text-lg hover:text-primary'>About Us</Link>
+                <div onClick={() => scrollToElementById("what-we-do")} className='cursor-pointer transform duration-300 ease-in-out hover:text-lg hover:text-primary'>What we Do</div>
+                <div onClick={() => scrollToElementById("pricing")} className='cursor-pointer transform duration-300 ease-in-out hover:text-lg hover:text-primary'>Prices</div>
+                <Link href={"/about"} className='cursor-pointer transform duration-300 ease-in-out hover:text-lg hover:text-primary'>About Us</Link>
                 {/* <Link href={"/faq"}>FAQs</Link> */}
                 {/* <Link
                     href={"/order_form"}

@@ -16,6 +16,7 @@ import {
     Rss,
     Images,
 } from 'lucide-react';
+import { scrollToElementById } from '@/utils/utils';
 
 export default function WhatWeDo() {
     const { ref, inView } = useInView({ threshold: 0.3 });
@@ -32,14 +33,8 @@ export default function WhatWeDo() {
         visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
     };
 
-    function scrollToElementById(id: string) {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    }
     return (
-        <section className="relative w-full py-20 what-we-do" ref={ref}>
+        <section className="relative w-full py-20 what-we-do" id='what-we-do' ref={ref}>
             <motion.div
                 className="flex items-center"
                 initial="hidden"

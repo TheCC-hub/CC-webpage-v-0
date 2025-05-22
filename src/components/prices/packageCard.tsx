@@ -24,7 +24,9 @@ export default function PackageCard({ item, bgRed }: any) {
 
                 <div>✅ {item.endDelevery}</div>
 
-                <Link href={"/order_form"}
+                <Link
+                    href={"https://dashboard.clipcurve.com/"}
+                    target='_blank'
                     className='px-5 py-2 mx-auto text-lg font-bold bg-gray-600 border-2 hover:border-primary border-white rounded-xl hover:bg-primary transform duration-300 ease-in-out'
                 >
                     Get Start

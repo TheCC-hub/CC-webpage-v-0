@@ -105,7 +105,7 @@ export default function PackageGrid() {
                     initial={{ opacity: 0, y: 60 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.7, ease: 'easeOut' }}
-                    className="text-4xl font-bold text-center text-gray-200 mb-12"
+                    className="md:text-4xl sm:text-3xl text-2xl font-bold text-center text-gray-200 mb-12"
                 >
                     All Packages Include:
                 </motion.h2>

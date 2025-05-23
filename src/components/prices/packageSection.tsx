@@ -8,7 +8,7 @@ export default function PackageSection({ tabData }: any) {
 
             <div className='text-justify'>
                 {tabData.description.map((item: any, idx: number) => (
-                    <p className="text-xl mb-2" key={idx}>{item}</p>
+                    <p className=" mb-2" key={idx}>{item}</p>
                 ))}
             </div>
 

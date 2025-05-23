@@ -36,7 +36,7 @@ export default function WhatWeDo() {
     return (
         <section className="relative w-full py-20 what-we-do" id='what-we-do' ref={ref}>
             <motion.div
-                className="flex items-center"
+                className="flex items-center md:flex-row flex-col justify-between text-left w-full md:max-w-6xl mx-auto md:px-6"
                 initial="hidden"
                 animate={hasAnimated ? 'visible' : 'hidden'}
                 variants={variants}
@@ -44,9 +44,9 @@ export default function WhatWeDo() {
                 <motion.div
                     variants={variants}
                     transition={{ delay: 0.3 }}
-                    className="max-w-[40%]"
+                    className="md:max-w-[40%] text-center md:text-left"
                 >
-                    <h1 className="text-4xl text-gray-200 font-bold mb-10">
+                    <h1 className="md:text-4xl text-3xl text-gray-200 font-bold sm:mb-10 mb-6">
                         Where big ideas become unstoppable products.
                     </h1>
                     <GlowingButton title="Pricing" onClick={() => scrollToElementById("pricing")} />
@@ -119,7 +119,7 @@ const servicesRight: ServiceItem[] = [
 export function ServicesGrid() {
     return (
         <section className="py-20 text-gray-200">
-            <div className="max-w-6xl mx-auto px-6">
+            <div className="max-w-6xl mx-auto md:px-6">
                 <div className="grid md:grid-cols-2 gap-12">
                     {/* Left Column */}
                     <div className="space-y-8">

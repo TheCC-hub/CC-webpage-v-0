@@ -23,25 +23,25 @@ export default function Home() {
   }, []);
   return (
     <div className="relative h-fit w-full">
-      <section className="px-28">
+      <section className="md:px-28 sm:px-10 px-5">
         <LandingPage />
       </section>
-      <section className="px-28">
+      <section className="md:px-28 sm:px-10 px-5">
         <AboutUs />
       </section>
-      <section className="px-28">
+      <section className="md:px-28 sm:px-10 px-5">
         <WhatWeDo />
       </section>
-      <section className="px-28">
+      <section className="md:px-28 sm:px-10 px-5">
         <HowWeWork />
       </section>
-      <section className="px-28">
+      <section className="md:px-28 sm:px-10 px-5">
         <PricingSection />
       </section>
-      <section className="px-28">
+      <section className="md:px-28 sm:px-10 px-5">
         <PackageGrid />
       </section>
-      <section className="px-28">
+      <section className="md:px-28 sm:px-10 px-5">
         <PlatformHoppers />
       </section>
 

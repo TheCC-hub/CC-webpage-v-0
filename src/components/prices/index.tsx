@@ -30,12 +30,12 @@ export default function PricingSection() {
     };
 
     return (
-        <div ref={ref} className="w-full text-center py-20" id="pricing">
+        <div ref={ref} className="w-full text-center md:py-20 py-10" id="pricing">
             <motion.h1
                 initial="hidden"
                 animate={controls}
                 variants={fadeUp}
-                className="text-4xl font-semibold"
+                className="md:text-4xl sm:text-3xl text-2xl font-semibold"
             >
                 Pricing
             </motion.h1>
@@ -45,7 +45,7 @@ export default function PricingSection() {
                 animate={controls}
                 variants={fadeUp}
                 transition={{ delay: 0.2 }}
-                className="flex items-center justify-center gap-5 mt-10"
+                className="flex items-center justify-center gap-5 md:mt-10 mt-6 flex-wrap"
             >
                 <PriceMenu tabs={Tabs} setActiveTab={setActiveTab} activeTab={activeTab} />
             </motion.div>

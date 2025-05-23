@@ -64,14 +64,14 @@ export default function HowWeWork() {
 
     return (
         <section className="py-20" ref={ref}>
-            <div className="mx-auto px-6 text-center">
+            <div className="mx-auto md:px-6 text-center">
 
                 {/* Animated Heading */}
                 <motion.h2
                     initial={{ opacity: 0, y: 60 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.7, ease: "easeOut" }}
-                    className="text-4xl font-bold text-white mb-4"
+                    className="md:text-4xl sm:text-3xl text-2xl font-bold text-white mb-4"
                 >
                     How do we do it?
                 </motion.h2>
@@ -95,7 +95,7 @@ export default function HowWeWork() {
                             animate={controls}
                             variants={variants}
                             transition={{ delay: index * 0.2 }}
-                            className="bg-[#1a1a2e] rounded-xl p-8 text-left hover:shadow-lg transition-all duration-300 flex flex-col justify-between items-center gap-4"
+                            className="bg-[#1a1a2e] rounded-xl md:p-8 p-5 text-left hover:shadow-lg transition-all duration-300 flex flex-col justify-between items-center gap-4"
                         >
                             <div>
                                 <div className="text-5xl font-bold text-gray-400 mb-4">

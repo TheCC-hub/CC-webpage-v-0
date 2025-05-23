@@ -5,7 +5,7 @@ export default function PackageCard({ item, bgRed }: any) {
 
 
     return (
-        <div className='min-w-[360px] w-[32%] relative text-gray-200 rounded-3xl overflow-hidden border-2 border-primary backdrop-blur-sm'>
+        <div className='sm:min-w-[360px] w-full sm:w-[32%] relative text-gray-200 rounded-3xl overflow-hidden border-2 border-primary backdrop-blur-sm'>
             <div className={`w-full  py-5 border-b-[0.1px] border-primary  ${bgRed ? "bg-primary text-white" : "bg-gray-700 text-white"}`}>
                 <h1 className='text-3xl font-semibold '>{item.name}</h1>
                 <p>{item.description}</p>

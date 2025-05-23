@@ -24,18 +24,18 @@ export default function LandingPage() {
     };
 
     return (
-        <div className="text-center items-center justify-start flex relative mt-32 mb-24" ref={ref}>
+        <div className="text-center items-center justify-start flex relative md:mt-32 mt-20 mb-24" ref={ref}>
 
             {/* Hero Section */}
             <motion.div
-                className="flex flex-col items-start justify-center text-left w-full"
+                className="flex flex-col items-start justify-center sm:text-left text-center w-full"
                 initial="hidden"
                 animate={hasAnimated ? 'visible' : 'hidden'}
                 variants={variants}
             >
-                <div className="mb-6 flex w-full md:flex-row flex-col">
+                <div className="mb-6 flex w-full sm:flex-row flex-col ">
                     <motion.h1
-                        className="text-[48px] w-[70%] min-w-[70%] font-semibold leading-snug bg-gradient-to-r from-white to-background/50 bg-clip-text text-transparent"
+                        className="md:text-[48px] sm:text-[30px] text-[24px] sm:w-[70%] min-w-[70%] font-semibold leading-snug bg-gradient-to-r from-white to-background/50 bg-clip-text text-transparent"
                         variants={variants}
                         transition={{ delay: 0.1 }}
                     >
@@ -46,10 +46,10 @@ export default function LandingPage() {
                         variants={variants}
                         transition={{ delay: 0.1 }}
                     >
-                        <h1 className='font-bold my-3'>Results-driven, no fluff - just execution.</h1>
-                        <p className='font-normal text-gray-400 mb-5'>How can we help you today?</p>
+                        <h1 className='font-bold my-3 sm:text-lg text-sm'>Results-driven, no fluff - just execution.</h1>
+                        <p className='font-normal text-gray-400 mb-5 text-sm md:text-lg'>How can we help you today?</p>
                         <Link href={"https://calendly.com/clip-curve"} target='_blank'>
-                            <GlowingButton title='Schedule a meeting' />
+                            <GlowingButton title='Schedule a meeting' className='text-sm' />
                         </Link>
                     </motion.div>
                 </div>
@@ -57,7 +57,7 @@ export default function LandingPage() {
                 <div className='w-full h-[0.5px] bg-gradient-to-r from-white to-background/50 rounded-full'></div>
 
                 <motion.div
-                    className="flex items-center justify-between w-full lg:pr-20 my-6"
+                    className="flex sm:items-center items-start justify-between sm:flex-row first-letter flex-col w-full lg:pr-20 my-6"
                     variants={variants}
                     transition={{ delay: 0.7 }}
                 >
@@ -70,7 +70,7 @@ export default function LandingPage() {
                 </motion.div>
 
                 <div className='flex my-4 text-center w-full itemsd-center justify-center'>
-                    ✨ <h2 className="text-xl  text-primary shining-text">Enjoy Your First Vertical Video On Us</h2> ✨
+                    ✨ <h2 className="sm:text-xl text-lg text-primary shining-text">Enjoy Your First Vertical Video On Us</h2> ✨
                 </div>
 
             </motion.div>

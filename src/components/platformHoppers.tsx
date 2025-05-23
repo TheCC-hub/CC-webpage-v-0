@@ -41,7 +41,7 @@ export default function PlatformHoppers() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.7, ease: "easeOut" }}
-                className="text-4xl font-extrabold text-seconday mb-8"
+                className="md:text-4xl sm:text-3xl text-2xl font-extrabold text-seconday mb-8"
             >
                 Our videos leap across platforms, <br />racking up views everywhere they land! 🚀
             </motion.h2>

@@ -45,7 +45,7 @@ export default function PricingSection() {
                 animate={controls}
                 variants={fadeUp}
                 transition={{ delay: 0.2 }}
-                className="flex items-center justify-center gap-5 md:mt-10 mt-6 flex-wrap"
+                className="flex items-center justify-center gap-5 md:mt-10 mt-6 flex-col md:flex-row w-full"
             >
                 <PriceMenu tabs={Tabs} setActiveTab={setActiveTab} activeTab={activeTab} />
             </motion.div>
